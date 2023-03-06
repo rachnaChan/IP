@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EX EIGHT: Animation & variable</title>
+<style>
+    .wrapper{
+        background-color: grey;
+        height:100vh; }
+
+    .drop{
+        position: relative;
+        width: 25%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        animation: drop 1.5s;
+        font-size: 3rem;
+        animation-direction: alternate-reverse;
+        animation-delay: calc(var(--order)*200ms); }
+
+    @keyframes drop {
+        100% {left: 50%; top: 0px;} 
+    }
+
+</style>
+</head>
+<body>
+    
+    <div class="wrapper">
+            <span class="drop" style="--order: 1"> 🥳</span>
+            <span class="drop" style="--order: 2"> &#128540	</span>
+            <span class="drop" style="--order: 3"> &#129321 </span>
+    </div>
+    
+</body>
+</html>

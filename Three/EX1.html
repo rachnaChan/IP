@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="ex1.css">
+</head>
+
+<body>
+    <div class="a">
+        <div class="b">
+            <b>To-do list with LocalStorage</b>
+        </div>
+        <div class="c">
+            <div class="row">
+                <div class="column">
+                    <div>Task title</div>
+                    <div><input style="border-radius: 10px; height: 30px; margin: 5px;" type="text" placeholder="Title"
+                            name=""></div>
+                </div>
+
+                <div class="column" style="position:relative;">
+                    <div>Assingnee</div>
+                    <div><input style="border-radius: 10px; height: 30px; margin: 5px;" type="text" placeholder="John"
+                            name=""></div>
+                </div>
+
+                <div class="column">
+                    <div>Dateline</div>
+                    <div><input style="border-radius: 10px; height: 32px; margin: 5px;" type="date" name=""></div>
+                </div>
+
+                <div class="column btn-wrapper">
+                    <button id="add-btn">Add</button>
+                </div>
+
+
+            </div>
+            <div id="list-wrapper">
+            
+            <button id="delete">g</button>
+        
+            </div>
+        </div>
+
+        <script>
+            let listWrapperEle = document.getElementById("list-wrapper");
+            let addBtnEle = document.getElementById("add-btn");
+           
+            let deleteBtn = document.getElementsByClassName("delete");
+            
+            let taskArr = [
+               
+                { name: "Create project", assignee: "Zmffhfltm", date: "2/24/22"},
+                { name: "Define project req", assignee: "Moon", date: "3/24/22" },
+                { name: "Testing on project", assignee: "Star", date: "4/44/22" },
+                { name: "Deploy project", assignee: "Sun", date: "5/24/22" },
+                { name: "Hosting ", assignee: "Grey", date: "6/24/22" },
+                { name: "Testing on project ", assignee: "Octupus", date: "7/24/22" },
+                { name: "Define project req ", assignee: "Introvert", date: "8/24/22" },
+                { name: "Hosting ", assignee: "Gic", date: "9/24/22" },
+                { name: "Create project ", assignee: "Weird", date: "10/24/22" },
+            ];
+
+            addBtnEle.addEventListener("click", () => {
+                taskArr.push(
+                    { name: "", assignee: "", date: "",button:""}
+                )
+                renderList();
+            })
+
+            function renderList() {
+                let listContent = "";
+                taskArr.forEach(taskArr => {
+                    listContent += `
+            <div class="d">
+              <div class="column">${taskArr.name}</div>
+              <div class="column">${taskArr.assignee}</div>
+              <div class="column">${taskArr.date}</div>
+              <div class="column">${taskArr.button}</div>
+
+            </div>
+          `;
+                });
+
+                listWrapperEle.innerHTML = listContent;
+            }
+
+            renderList();
+
+            
+            deleteBtn.addEventListener("click",() =>{
+                taskArr.pop(
+                    {name:"",assignee:"",date:"",button:""}
+                )
+                renderList();
+            })
+
+             
+        </script>
+
+</body>
+
+</html>
+

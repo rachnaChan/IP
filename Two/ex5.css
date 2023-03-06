@@ -1,0 +1,53 @@
+.first {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.second {
+    margin-top: 50px;
+    border: 10px solid gray;
+    border-bottom: 100px solid gray;
+    width: 500px;
+    height: 600px;
+}
+
+.third {
+    width: 500px;
+    height: 600px;
+    margin-left: 100px;
+    border: 10px solid rgb(138, 138, 138);
+    background-color: rgb(255, 255, 255);
+
+}
+
+#viewport {
+    width: 497px;
+    height: 599px;
+    margin-top: 0px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+#viewport2 {
+    width: 499px;
+    height: 598px;
+    margin-top: 0px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.inputoutput {
+    text-align: center;
+    color: aliceblue;
+}
+
+.text {
+    width: 220px;
+    color: #fff;
+    margin: 20px;
+    margin-left: 120px;
+    margin-top: 50px;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+}
