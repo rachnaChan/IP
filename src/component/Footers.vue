@@ -99,6 +99,7 @@ nav {
         .fonts{
             width: 25%;
             font-family: "Dokdo";
+            font-size: 1.3rem;
         }
         .footEmail{
             height: 45px;
