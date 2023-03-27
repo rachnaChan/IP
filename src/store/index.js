@@ -1,18 +1,9 @@
+import { createStore } from "vuex";
 
-import { createStore } from 'vuex'
 
 // Create a new store instance.
 export default createStore({
-  state : {
-
-  },
-  mutations: {
-
-  },
-  actions:{
-    
-  }
-})
-
-
-
+  state: {},
+  mutations: {},
+  actions: {},
+});

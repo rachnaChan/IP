@@ -42,7 +42,7 @@ nav {
     align-items: center;
     background-color: #DEEBEF;
     padding: 1rem 2rem;
-    height: 120px;
+    height: 100px;
 
     main {
         width: 90%;

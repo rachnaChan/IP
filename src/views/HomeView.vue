@@ -21,7 +21,7 @@
               fefwefewqfrerddudaswefqfqdwed
               weqcehaduw eqyqwywqydhuwqeudh
               wewfcsadcfewqewdedsfafe</p>
-            <div >
+            <div class="text-right">
               <RouterLink :to="{ name: 'about' }">
                 <p class="text-danger text-decoration-underline" style="text-align:right">see more</p>
               </RouterLink>
@@ -76,13 +76,13 @@
 
         <div class="row align-items-center w-90">
 
-          <div class="col-sm-3 mx-1 my-3 store-item c0 c1 mt-5">
+          <div class="col-sm-3 mx-1 my-3 store-item c0 c1 ">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/cake01.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Cake-01</h5>
                   <h5><strong>15.99</strong>$</h5>
                 </div>
@@ -91,13 +91,13 @@
 
           </div>
 
-          <div class=" col-sm-3 mx-auto my-3 store-item c0 c2  mt-5">
+          <div class=" col-sm-3 mx-auto my-3 store-item c0 c2">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/cookie01.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Cookie-01</h5>
                   <h5><strong>3.5</strong>$</h5>
                 </div>
@@ -105,13 +105,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c3 mt-5">
+          <div class="col-sm-3 mx-auto my-3 store-item c0 c3">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/cupcake01.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>CupCake-01</h5>
                   <h5><strong>2.2</strong>$</h5>
                 </div>
@@ -119,13 +119,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c4 mt-5">
+          <div class="col-sm-3 mx-auto my-3 store-item c0 c4">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/donut01.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Donut-01</h5>
                   <h5><strong>1.5</strong>$</h5>
                 </div>
@@ -133,14 +133,14 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-1 my-3 store-item c0 c5 mt-5">
+          <div class="col-sm-3 mx-1 my-3 store-item c0 c5">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/drink01.jpeg" class=" img-fluid store-img" alt="">
 
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Drink-01</h5>
                   <h5><strong>4.2</strong>$</h5>
                 </div>
@@ -148,13 +148,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c6 mt-5">
+          <div class="col-sm-3 mx-auto my-3 store-item c0 c6">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/gummy01.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Gummy-01</h5>
                   <h5><strong>0.99</strong>$</h5>
                 </div>
@@ -162,13 +162,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c7 mt-5">
+          <div class="col-sm-3 mx-auto my-3 store-item c0 c7">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/cake02.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Cake-02</h5>
                   <h5><strong>22</strong>$</h5>
                 </div>
@@ -176,13 +176,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c8 mt-5">
+          <div class="col-sm-3 mx-auto my-3 store-item c0 c8">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/cookie02.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Cookie-02</h5>
                   <h5><strong>15.99</strong>$</h5>
                 </div>
@@ -190,13 +190,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-1 my-3 store-item c0 c9 mt-5">
+          <div class="col-sm-3 mx-1 my-3 store-item c0 c9">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/cupcake02.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>CupCake-02</h5>
                   <h5><strong>1.87</strong>$</h5>
                 </div>
@@ -204,13 +204,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c10 mt-5">
+          <div class="col-sm-3 mx-auto my-3 store-item c0 c10">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/donut02.jpeg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Donut-02</h5>
                   <h5><strong>2.1</strong>$</h5>
                 </div>
@@ -218,13 +218,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c11 mt-5">
+          <div class="col-sm-3 mx-auto my-3 store-item c0 c11">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/drink02.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Drink-02</h5>
                   <h5><strong>3.99</strong>$</h5>
                 </div>
@@ -232,13 +232,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c12 mt-5">
+          <div class="col-sm-3 mx-auto my-3 store-item c0 c12">
             <div class="about-img__container mt-3">
-              <div class="img-container shadow-lg">
+              <div class="img-container">
                 <img src="../assets/Img/gummy02.jpg" class=" img-fluid store-img" alt="">
               </div>
               <div>
-                <div class="mt-2 d-flex justify-content-between text-capitalize">
+                <div class=" d-flex justify-content-between text-capitalize">
                   <h5>Gummy-01</h5>
                   <h5><strong>2.5</strong>$</h5>
                 </div>
@@ -294,7 +294,7 @@ svg {
   width: 100%;
   height: 100%;
   outline: 0.5rem outset pink;
-  z-index: -2;
+  z-index: -1;
   transition: all 1s ease-in-out;
 }
 
@@ -304,9 +304,8 @@ svg {
 }
 
 .img-container {
-  width:95%;
-  height: 110px;
-  border-radius: 10px;
+  width:90%;
+  height: 170px;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -328,7 +327,7 @@ svg {
 .c0 {
   font-family: 'Papyrus';
   width: 20%;
-  height: 160px;
+  height: 220px;
 }
 
 .c1 {
@@ -380,5 +379,4 @@ svg {
 .c12 {
   background-color: #F5CECE;
 }
-
 </style>
