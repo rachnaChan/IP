@@ -1,4 +1,4 @@
-
+<!-- 
 <template>
   <div class="aa">
     <section class="about py-5">
@@ -65,7 +65,6 @@
                     <path
                       d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                   </svg>
-                  <!-- <span class="input-group-text "><i class="fas fa-search"></i></span> -->
                 </div>
                 <input type="text" class="form-control" id="item" placeholder='item ...'>
               </div>
@@ -76,14 +75,14 @@
 
         <div class="row align-items-center w-90" v-if="!isAll">
 
-          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index]" :key="item.name">
+          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index]" :key="`${item.name}${index}`">
             <div class=" mt-3">
               <div class="img-container">
                 <img src="{{ item.imagePath }}" class=" img-fluid store-img" alt="">
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <!-- {{ data }} -->
+         
                   <h5>{{ item.name }}</h5>
                   <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
@@ -91,7 +90,6 @@
             </div>
 
           </div>
-
 
 
         </div>
@@ -104,7 +102,7 @@
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <!-- {{ data }} -->
+              
                   <h5>{{ item.name }}</h5>
                   <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
@@ -113,14 +111,14 @@
 
           </div>
 
-          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index+1]" :key="item.name">
+          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index+1]" :key="`${item.name}${index}`">
             <div class=" mt-3">
               <div class="img-container">
                 <img src="{{ item.imagePath }}" class=" img-fluid store-img" alt="">
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <!-- {{ data }} -->
+     
                   <h5>{{ item.name }}</h5>
                   <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
@@ -135,7 +133,7 @@
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <!-- {{ data }} -->
+     
                   <h5>{{ item.name }}</h5>
                   <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
@@ -150,7 +148,7 @@
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <!-- {{ data }} -->
+               
                   <h5>{{ item.name }}</h5>
                   <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
@@ -165,7 +163,7 @@
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <!-- {{ data }} -->
+          
                   <h5>{{ item.name }}</h5>
                   <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
@@ -180,7 +178,7 @@
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <!-- {{ data }} -->
+     
                   <h5>{{ item.name }}</h5>
                   <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
@@ -376,20 +374,4 @@ svg {
 }
 </style>
 
-
-<!-- $(document).ready(function () {
-  $('.type').click(function () {
-    const value = $(this).attr('data-filter');
-
-    if (value == 'all') {
-      $('.itemBox').show('1000');
-    } else {
-      $('.itemBox').not('.' + value).hide('1000');
-      $('.itemBox').filter('.' + value).show('1000');
-    }
-  })
-
-  $('.type').click(function () {
-    $(this).addClass('active').siblings().removeClass('active');
-  })
-}) -->
+ -->
