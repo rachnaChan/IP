@@ -7,11 +7,11 @@
         <div class="row justify-content-between">
 
           <div class="col-10 col-md-6 align-self-center my-5">
-            <div >
-              <div class="about-img__container">
+            <div>
+              <div>
                 <img src="../assets/Img/cake04.jpg" class="img-fluid" alt="">
               </div>
-              
+
             </div>
           </div>
 
@@ -44,13 +44,13 @@
 
         <div class="row">
           <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 flex-wrap text-dark">
-            <a href="#" class="btn btn-outline-secondary text-uppercase filter-btn m-2">all</a>
-            <a href="#" class="btn btn-outline-secondary text-uppercase filter-btn m-2">cake</a>
-            <a href="#" class="btn btn-outline-secondary text-uppercase filter-btn m-2">cookie</a>
-            <a href="#" class="btn btn-outline-secondary text-uppercase filter-btn m-2">cupCake</a>
-            <a href="#" class="btn btn-outline-secondary text-uppercase filter-btn m-2">donut</a>
-            <a href="#" class="btn btn-outline-secondary text-uppercase filter-btn m-2">drink</a>
-            <a href="#" class="btn btn-outline-secondary text-uppercase filter-btn m-2">gummy</a>
+            <a class="type active btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="all"  @click="isAll=true">all</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" date-filter="cake" @click="index=0;isAll=false">cake</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cookie" @click="index=1;isAll=false">cookie</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cupcake" @click="index=2;isAll=false">cupCake</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="donut" @click="index=3;isAll=false">donut</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink" @click="index=4;isAll=false">drink</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="gummy" @click="index=5;isAll=false">gummy</a>
           </div>
         </div>
 
@@ -61,190 +61,135 @@
               <div class="input-group mb-3 justify-content-center">
                 <div class="input-group-prepend mx-3 mt-1">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                  </svg>
                   <!-- <span class="input-group-text "><i class="fas fa-search"></i></span> -->
                 </div>
-                <input type="text"  class="form-control" id="item" placeholder='item ...'>
+                <input type="text" class="form-control" id="item" placeholder='item ...'>
               </div>
 
             </form>
           </div>
         </div>
 
-        <div class="row align-items-center w-90">
+        <div class="row align-items-center w-90" v-if="!isAll">
 
-          <div class="col-sm-3 mx-1 my-3 store-item c0 c1 ">
-            <div class="about-img__container mt-3">
+          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index]" :key="item.name">
+            <div class=" mt-3">
               <div class="img-container">
-                <img src="../assets/Img/cake01.jpg" class=" img-fluid store-img" alt="">
+                <img src="{{ item.imagePath }}" class=" img-fluid store-img" alt="">
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Cake-01</h5>
-                  <h5><strong>15.99</strong>$</h5>
+                  <!-- {{ data }} -->
+                  <h5>{{ item.name }}</h5>
+                  <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
               </div>
             </div>
 
           </div>
 
-          <div class=" col-sm-3 mx-auto my-3 store-item c0 c2">
-            <div class="about-img__container mt-3">
+
+
+        </div>
+        <div class="row align-items-center w-90" v-else>
+
+          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index]" :key="item.name">
+            <div class=" mt-3">
               <div class="img-container">
-                <img src="../assets/Img/cookie01.jpg" class=" img-fluid store-img" alt="">
+                <img src="{{ item.imagePath }}" class=" img-fluid store-img" alt="">
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Cookie-01</h5>
-                  <h5><strong>3.5</strong>$</h5>
+                  <!-- {{ data }} -->
+                  <h5>{{ item.name }}</h5>
+                  <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
               </div>
             </div>
+
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c3">
-            <div class="about-img__container mt-3">
+          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index+1]" :key="item.name">
+            <div class=" mt-3">
               <div class="img-container">
-                <img src="../assets/Img/cupcake01.jpg" class=" img-fluid store-img" alt="">
+                <img src="{{ item.imagePath }}" class=" img-fluid store-img" alt="">
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>CupCake-01</h5>
-                  <h5><strong>2.2</strong>$</h5>
+                  <!-- {{ data }} -->
+                  <h5>{{ item.name }}</h5>
+                  <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c4">
-            <div class="about-img__container mt-3">
+          </div>
+          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index+2]" :key="item.name">
+            <div class=" mt-3">
               <div class="img-container">
-                <img src="../assets/Img/donut01.jpg" class=" img-fluid store-img" alt="">
+                <img src="{{ item.imagePath }}" class=" img-fluid store-img" alt="">
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Donut-01</h5>
-                  <h5><strong>1.5</strong>$</h5>
+                  <!-- {{ data }} -->
+                  <h5>{{ item.name }}</h5>
+                  <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
               </div>
             </div>
+
           </div>
-
-          <div class="col-sm-3 mx-1 my-3 store-item c0 c5">
-            <div class="about-img__container mt-3">
+          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index+3]" :key="item.name">
+            <div class=" mt-3">
               <div class="img-container">
-                <img src="../assets/Img/drink01.jpeg" class=" img-fluid store-img" alt="">
-
+                <img src="{{ item.imagePath }}" class=" img-fluid store-img" alt="">
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Drink-01</h5>
-                  <h5><strong>4.2</strong>$</h5>
+                  <!-- {{ data }} -->
+                  <h5>{{ item.name }}</h5>
+                  <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c6">
-            <div class="about-img__container mt-3">
+          </div>
+          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index+4]" :key="item.name">
+            <div class=" mt-3">
               <div class="img-container">
-                <img src="../assets/Img/gummy01.jpg" class=" img-fluid store-img" alt="">
+                <img src="{{ item.imagePath }}" class=" img-fluid store-img" alt="">
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Gummy-01</h5>
-                  <h5><strong>0.99</strong>$</h5>
+                  <!-- {{ data }} -->
+                  <h5>{{ item.name }}</h5>
+                  <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c7">
-            <div class="about-img__container mt-3">
+          </div>
+          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data[index+5]" :key="item.name">
+            <div class=" mt-3">
               <div class="img-container">
-                <img src="../assets/Img/cake02.jpg" class=" img-fluid store-img" alt="">
+                <img src="{{ item.imagePath }}" class=" img-fluid store-img" alt="">
               </div>
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Cake-02</h5>
-                  <h5><strong>22</strong>$</h5>
+                  <!-- {{ data }} -->
+                  <h5>{{ item.name }}</h5>
+                  <h5><strong>{{item.price}}</strong>$</h5>
                 </div>
               </div>
             </div>
+
           </div>
 
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c8">
-            <div class="about-img__container mt-3">
-              <div class="img-container">
-                <img src="../assets/Img/cookie02.jpg" class=" img-fluid store-img" alt="">
-              </div>
-              <div>
-                <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Cookie-02</h5>
-                  <h5><strong>15.99</strong>$</h5>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-sm-3 mx-1 my-3 store-item c0 c9">
-            <div class="about-img__container mt-3">
-              <div class="img-container">
-                <img src="../assets/Img/cupcake02.jpg" class=" img-fluid store-img" alt="">
-              </div>
-              <div>
-                <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>CupCake-02</h5>
-                  <h5><strong>1.87</strong>$</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c10">
-            <div class="about-img__container mt-3">
-              <div class="img-container">
-                <img src="../assets/Img/donut02.jpeg" class=" img-fluid store-img" alt="">
-              </div>
-              <div>
-                <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Donut-02</h5>
-                  <h5><strong>2.1</strong>$</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c11">
-            <div class="about-img__container mt-3">
-              <div class="img-container">
-                <img src="../assets/Img/drink02.jpg" class=" img-fluid store-img" alt="">
-              </div>
-              <div>
-                <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Drink-02</h5>
-                  <h5><strong>3.99</strong>$</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-3 mx-auto my-3 store-item c0 c12">
-            <div class="about-img__container mt-3">
-              <div class="img-container">
-                <img src="../assets/Img/gummy02.jpg" class=" img-fluid store-img" alt="">
-              </div>
-              <div>
-                <div class=" d-flex justify-content-between text-capitalize">
-                  <h5>Gummy-01</h5>
-                  <h5><strong>2.5</strong>$</h5>
-                </div>
-              </div>
-            </div>
-          </div>
 
         </div>
 
@@ -255,9 +200,96 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+const index=ref(0)
+const isAll=ref(false)
+const data = ref([
+   [//cake
+   {
+      name: "Cake-01",
+      price: 15.99,
+      imagePath: "../assets/Img/cake01.jpg"
+    },
+    {
+      name: "Cake-02",
+      price: 17.99,
+      imagePath: "../assets/Img/cake02.jpg"
+    }
+  ],
+  [//cookie
+    {
+      name: "Cookie-01",
+      price: 2.99,
+      imagePath: "../assets/Img/cookie01.jpg"
+    },
+    {
+      name: "Cookie-02",
+      price: 1.99,
+      imagePath: "../assets/Img/cookie02.jpg"
+    }
+  ],
+
+
+
+   [//gummy:
+    {
+      name: "Gummy-01",
+      price: 1.99,
+      imagePath: "../assets/Img/gummy01.jpg"
+    },
+    {
+      name: "Gummy-02",
+      price: 2.99,
+      imagePath: "../assets/Img/gummy02.jpg"
+    }
+  ],
+
+  [//drink: 
+    {
+      name: "Drink-01",
+      price: 6.99,
+      imagePath: "../assets/Img/drink01.jpg"
+    },
+    {
+      name: "Drink-02",
+      price: 5.99,
+      imagePath: "../assets/Img/drink02.jpg"
+    }
+  ],
+
+  [//donut: 
+    {
+      name: "Donut-01",
+      price: 1.99,
+      imagePath: "../assets/Img/donut01.jpg"
+    },
+    {
+      name: "Donut-02",
+      price: 2.99,
+      imagePath: "../assets/Img/donut02.jpg"
+    }
+  ],
+
+  [// cupcake:
+    {
+      name: "Cupcake-01",
+      price: 4.99,
+      imagePath: "../assets/Img/cupcake01.jpg"
+    },
+    {
+      name: "Cupcake-02",
+      price: 2.99,
+      imagePath: "../assets/Img/cupcake02.jpg"
+    }
+  ]
+])
 </script>
 
 <style lang="scss" scoped>
+* {
+  box-sizing: border-box;
+}
+
 .aa {
   background-image: url(../assets/Img/background.jpg);
   background-repeat: no-repeat;
@@ -266,13 +298,17 @@ import { RouterLink } from 'vue-router'
   width: 100%;
   z-index: -99;
 }
-.aboutUs{
-  font-family: "Papyrus";font-size: 48px;
-  span{
+
+.aboutUs {
+  font-family: "Papyrus";
+  font-size: 48px;
+
+  span {
     color: red;
   }
 }
-.menu{
+
+.menu {
   font-family: 'Dokdo';
   font-size: 5rem;
 }
@@ -304,7 +340,7 @@ svg {
 }
 
 .img-container {
-  width:90%;
+  width: 90%;
   height: 170px;
   margin: auto;
   position: relative;
@@ -338,45 +374,22 @@ svg {
 .c2 {
   background-color: #F5CECE;
 }
-
-.c3 {
-  background-color: #C9E0E7;
-}
-
-.c4 {
-  background-color: #F5CECE;
-  
-}
-
-.c5 {
-  background-color: #F5CECE;
-}
-
-.c6 {
-  background-color: #C9E0E7;
-}
-
-.c7 {
-  background-color: #F5CECE;
-}
-
-.c8 {
-  background-color: #C9E0E7;
-}
-
-.c9 {
-  background-color: #C9E0E7;
-}
-
-.c10 {
-  background-color: #F5CECE;
-}
-
-.c11 {
-  background-color: #C9E0E7;
-}
-
-.c12 {
-  background-color: #F5CECE;
-}
 </style>
+
+
+<!-- $(document).ready(function () {
+  $('.type').click(function () {
+    const value = $(this).attr('data-filter');
+
+    if (value == 'all') {
+      $('.itemBox').show('1000');
+    } else {
+      $('.itemBox').not('.' + value).hide('1000');
+      $('.itemBox').filter('.' + value).show('1000');
+    }
+  })
+
+  $('.type').click(function () {
+    $(this).addClass('active').siblings().removeClass('active');
+  })
+}) -->

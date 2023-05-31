@@ -35,6 +35,9 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style lang="scss" scoped>
+*{
+  box-sizing: border-box;
+}
 nav {
     width: 100%;
     display: flex;

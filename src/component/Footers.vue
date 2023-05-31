@@ -4,7 +4,7 @@
             <div>
                 <div class="section1 d-flex">
                     <img src="../assets/Img/a.png" alt="logo">
-                    <p class=" mt-4 mx-3 font ">Food's Info <span> | </span> Drink's Info</p>
+                    <p class=" mt-4 mx-3 font text-decoration-underline ">Food's Info <span> | </span> Drink's Info</p>
                 </div>
 
                 <div class="d-flex">
@@ -62,6 +62,9 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style lang="scss" scoped>
+*{
+  box-sizing: border-box;
+}
 nav {
     width: 100%;
     display: flex;
