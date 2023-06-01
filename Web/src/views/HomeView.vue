@@ -76,7 +76,7 @@
 
         <div class="row align-items-center w-90">
 
-          <div  class="itemBox cake col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data" :key="item._id" >
+          <div  class="itemBox col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data" :key="item._id" >
             <div class=" mt-3">
               <div class="img-container">
                 <img :src="`http://localhost:8000/api/product/static/${item.imagePath}`" class=" img-fluid store-img" alt="">

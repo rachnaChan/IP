@@ -28,7 +28,7 @@ router.get('/',async(req,res)=>{
 
 router.get('/static/*',(req,res)=>{
     let filePath=req.url.replace('/static',"")
-    filePath=filePath.split('%20').join(" ")
+    filePath=filePath.split('20%').join(" ")
     res.sendFile(filePath,{root:'./src/file'})
 })
 
