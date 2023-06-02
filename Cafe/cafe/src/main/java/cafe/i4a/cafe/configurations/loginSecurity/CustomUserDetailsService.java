@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import cafe.i4a.cafe.models.cashier.register;
 import cafe.i4a.cafe.repositories.cashier.registerRepository;
-public class CustomUserDetailsService implements UserDetailsService {
+public class customUserDetailsService implements UserDetailsService {
   
   @Autowired private registerRepository userRepo;
 
@@ -17,7 +17,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     if (users == null) {
       throw new UsernameNotFoundException("User Not Founded in our Cafe!!");
     }
-    return new CustomUserDetails(users);
+    return new customUserDetails(users);
   }
 
 }

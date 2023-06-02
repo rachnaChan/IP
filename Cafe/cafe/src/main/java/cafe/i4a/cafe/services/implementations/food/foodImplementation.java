@@ -27,7 +27,7 @@ public class foodImplementation implements foodService {
 
     @Override
     public food getFoodById(Long id) {
-        return foodRepository.findById(id).orElse(null);
+        return foodRepository.findById(id).get();
     }
 
     @Override

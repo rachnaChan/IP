@@ -27,7 +27,7 @@ public class orderFoodImplementation implements orderDetailFoodService{
 
     @Override
     public orderedDetailFoods getOrderedFoodById(long id) {
-       return orderFoodRepositories.findById(id).orElse(null);
+       return orderFoodRepositories.findById(id).get();
     }
     
 }

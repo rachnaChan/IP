@@ -231,7 +231,7 @@
     
                         </tr>
     
-                        <tr th:each="food: ${foods}" class="mt-4 border-0">
+                        <tr th:each="food: ${foods}" class="infoDetail mt-4 border-0">
                             <th th:text="${food.id}"> scope="row"</th>
                             <td th:text="${food.name}" class="fname" th:id="${food.id}" style="cursor: pointer;"></td>
     
@@ -302,7 +302,7 @@
     
                         </tr>
     
-                        <tr th:each="drink: ${drinks}" class="mt-4 border-0">
+                        <tr th:each="drink: ${drinks}" class="infoDetail mt-4 border-0">
                             <th th:text="${drink.id}"> scope="row"</th>
                             <td th:text="${drink.name}" class="dname" th:id="${drink.id}" style="cursor: pointer;"></td>
     

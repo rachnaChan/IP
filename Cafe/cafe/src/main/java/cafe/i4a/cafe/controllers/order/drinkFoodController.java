@@ -5,11 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import cafe.i4a.cafe.drinkFoodOrder.drinkFoodOrder;
 
 import cafe.i4a.cafe.services.drink.drinkService;
 import cafe.i4a.cafe.services.food.foodService;
+import cafe.i4a.cafe.services.implementations.drink.drinkImplementation;
+import cafe.i4a.cafe.services.implementations.food.foodImplementation;
 import jakarta.servlet.http.HttpSession;
 
 
@@ -21,6 +24,12 @@ public class drinkFoodController {
     @Autowired
     private foodService foodServices;
 
+    @Autowired
+    private foodImplementation foodImplementations;
+
+    @Autowired
+    private drinkImplementation drinkImplementations;
+
     @GetMapping("/orderHistory")
     public String orderhistory(Model model) {
         model.addAttribute("drinks", drinkServices.getAllDrink());
@@ -31,15 +40,19 @@ public class drinkFoodController {
     public String drinkOrder(Model model, HttpSession session) {
         model.addAttribute("drinks", drinkServices.getAllDrink());
         model.addAttribute("foods", foodServices.getAllFood());
+        // model.addAttribute("invoice", )
         // String tableSelected = (String) session.getAttribute("tableSelected");
         // model.addAttribute("tableSelected", tableSelected);
         return "drink/drinkFoodOrder";
     }
 
-    @GetMapping(path = "/drinkFoodOrder/confirm")
-    public String addToCart(@PathVariable Long id, Model model){
-        model.addAttribute("drinkOrder", drinkFoodOrder.cartDrinks.add(drinkServices.getDrinkById(id).get()));
-        model.addAttribute("foodOrder", drinkFoodOrder.cartFoods.add(foodServices.getFoodById(id).get()));
+    @PostMapping(path = "/drinkFoodOrder/confirm")
+    public String addToCart(@PathVariable("id") Long id, Model model){
+        
+       model.addAttribute("drinkOrder", drinkFoodOrder.cartDrinks.add(drinkImplementations.getDrinkById(id)));
+
+       model.addAttribute("foodOrder", drinkFoodOrder.cartFoods.add(foodImplementations.getFoodById(id)));
+        
         // drinkFoodOrder.cartDrinks.add(drinkServices.getDrinkById(id).get());
         // drinkFoodOrder.cartFoods.add(foodServices.getFoodById(id).get());
         return "redirect:/drinkFoodOrder";

@@ -7,6 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Login</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500&display=swap');
+
         .container {
             background-image: url(../img/login.png);
             height: 500px;
@@ -20,8 +22,8 @@
             <div class="row d-flex justify-content-center align-items-center">
 
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <h1 class="text-center align-items-center justify-content-center font-weight-bolder text-muted " style="font-family: 'Dosis';">Gic
-                        Cafe</h1>
+                    <h1 class="text-center align-items-center justify-content-center font-weight-bolder text-muted "
+                        style="font-family: 'Dosis';">Login</h1>
                 </div>
             </div>
         </div>
@@ -33,7 +35,7 @@
             <div class="row d-flex justify-content-center align-items-center h-50">
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
 
-                    <h1 class="text-muted mt-5 text-xxl-center" style="font-family: 'Dosis';">Login</h1>
+                    <!-- <h1 class="text-muted mt-5 text-center fs-1" style="font-family: 'Dosis';">Login</h1> -->
 
                     <form style="position: absolute;" method="post" th:action="@{/login}" th:object="${user}">
 

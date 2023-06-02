@@ -71,9 +71,7 @@ public class food {
 		return "food [id=" + id + ", name=" + name + ", price=" 
 	            + price + ", image=" + image + "]";
 	}
-    public food get() {
-        return null;
-    }
+
 
 	
     

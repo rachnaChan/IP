@@ -182,7 +182,7 @@
                                 </div>
 
                                 <div class="modal-body">
-                                    <form>
+                                    <form  method="post" th:action="@{/drinkFoodOrder/confirm}">
                                         <div class="mb-4" >
                                             <label for="number">Amount</label>
                                             <input type="number">
@@ -197,6 +197,12 @@
                                                 <option  value="L">L</option>
                                             </select>
                                         </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+
                                     </form>   
 
                                 </div>
@@ -220,10 +226,7 @@
 
                                 </div> -->
 
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+
 
                             </div>
 
@@ -249,20 +252,21 @@
 
                                 <div class="modal-body">
 
-                                    <form>
+                                    <form method="post" th:action="@{/drinkFoodOrder/confirm}">
                                         <label for="number">Amount</label>
                                         <input type="number">
-                                    
+
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
                                     </form>
 
                                     
 
                                 </div>
 
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
+                                
 
                             </div>
 

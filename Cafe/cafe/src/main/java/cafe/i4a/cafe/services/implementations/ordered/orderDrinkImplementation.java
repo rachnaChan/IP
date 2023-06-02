@@ -29,7 +29,9 @@ public class orderDrinkImplementation implements orderDetailDrinkService {
 
     @Override
     public orderedDetailDrinks getOrderedDrinkById(long id) {
-       return orderedDrinkRepositories.findById(id).orElse(null);
+       return orderedDrinkRepositories.findById(id).get();
     }
+
+
     
 }

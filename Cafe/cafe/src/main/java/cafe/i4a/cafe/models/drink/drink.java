@@ -79,12 +79,5 @@ public class drink {
 		this.id = id;
 	}
 
-	public drink get() {
-		return this;
-
-	}
-
-	
-
 	
 }

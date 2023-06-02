@@ -16,7 +16,7 @@ public class webSecurityConfig  {
 
   @Bean
   public UserDetailsService userDetailsService() {
-  return new custonUserDetailsService();
+  return new customUserDetailsService();
   }
 
   @Bean
