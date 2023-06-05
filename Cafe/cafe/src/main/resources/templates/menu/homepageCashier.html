@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <title>HomePage Cashier</title>
+    <link rel="stylesheet" href="../style/homepage.css">
+    <style>
+        .img-container {
+            width: 100%;
+            height: 160px;
+            margin: auto;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .store-img {
+            transition: all 1s ease-in-out;
+        }
+
+        .img-container:hover .store-img {
+            transform: scale(1.3);
+        }
+
+        .img-container:hover {
+            transform: translate(0, 0);
+        }
+
+        .about-img__container {
+            position: relative;
+        }
+
+        .about-img__container::before {
+            content: "";
+            position: absolute;
+            top: -2rem;
+            left: -1.5rem;
+            width: 100%;
+            height: 100%;
+            outline: 0.5rem outset pink;
+            z-index: -1;
+            transition: all 1s ease-in-out;
+        }
+
+        .about-img__container:hover:before {
+            top: 0;
+            left: 0;
+        }
+        .img-fluid{
+            object-fit: cover;
+            object-position: center top;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-between w-100 d-flex">
+        <div class="logo d-flex w-25 justify-content-center img-container">
+            <img src="../img/logo.png" alt="logo" class="store-img">
+            <a class="navbar-brand justify-content-center text-center" href="#">
+                <p>Gic Cafe</p>
+            </a>
+        </div>
+
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse w-75 justify-content-between" id="navbarNavAltMarkup">
+            <div class="navbar-nav w-50 justify-content-between ml-50" style="margin-left: 40%;">
+                <a class="nav-item nav-link active" href="#Home">
+                    <h5 class="fs-1">Home</h5>
+                </a>
+                <a class="nav-item nav-link" href="#AboutUs">
+                    <h5 class="fs-1">About Us</h5>
+                </a>
+                <a class="nav-item nav-link" href="#Menu">
+                    <h5 class="fs-1">Menu</h5>
+                </a>
+                <a class="nav-item nav-link" href="/" th:href="@{/logout}">
+                    <h5 class="fs-1">LogOut</h5>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about py-5" id="AboutUs">
+        <div class="aboutContainer">
+
+            <div class="row justify-content-between">
+
+                <div class="col-10 col-md-6 align-self-center my-5">
+                    <div>
+                        <div class="w-50 about-img__container" style="margin-left: 25%;">
+                            <img src="data:image/jpeg;base64," th:attrappend="src=${userlogged.image}" class="img-fluid store-img img-container" alt="">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="aboutUs col-11 mx-auto col-md-6 my-5">
+                    <div>About <span>Us</span> </div>
+                    <p>Welcome to our Cashier's Homepage Gic Cafe!!</p>
+
+                    <div sec:authorize="isAuthenticated()" class="justify-content-center m-auto text-center">
+                        <b><span sec:authentication="name">Username</span></b> &nbsp;
+                        <i><span sec:authentication="principal.authorities">Roles</span></i>
+                    </div>
+
+
+                    <div class="text-center text-warning text-decoration-underline ">
+                        <a class="nav-item nav-link" href="/" th:href="@{/tableSelection}">
+                            <h5 class="fs-1 text-decoration-none">Order Now</h5>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class=" py-5" id="Menu">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-10 mx-auto col-sm-6 text-center menu text-decoration-underline">
+                    <p>Menu</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 flex-wrap text-dark">
+                    <a class="type active btn btn-outline-secondary text-uppercase filter-btn m-2"
+                        data-filter="all">All</a>
+                    <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2"
+                        data-filter="coolDrink">coolDrinks</a>
+                    <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2"
+                        data-filter="hotDrink">hotDrinks</a>
+                    <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2"
+                        data-filter="frappe">Frappes</a>
+                    <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="food">Food</a>
+
+                </div>
+            </div>
+
+            <div class="search m-auto w-75 justify-content-center">
+
+                <form class="w-100 m-auto justify-content-center d-flex">
+                    <div>
+                        <i class="bx bxs-search-alt-2 mt-3 mx-4"></i>
+                    </div>
+
+                    <div>
+                        <input type="text" id="find" placeholder="Find Your Cup of Tea..." onkeyup="search()">
+                    </div>
+                </form>
+
+            </div>
+
+            <div class=" align-items-center justify-content-between m-auto text-center" id="store-img">
+
+                <div class="productList align-items-center justify-content-between m-auto text-center">
+
+                    <div class="itemBox coolDrink col-sm-4 mx-1 my-3 fontS " th:each="drink: ${drinks}"
+                        th:if="${drink.type == 'coolDrink'}">
+
+                        <div class="product">
+                            <div class="img-container position-relative">
+                                <img src="data:image/jpeg;base64," th:attrappend="src=${drink.image}"
+                                    style="width: 250px; height: 250px;" class="store-img">
+                            </div>
+                            <div>
+
+                                <h5 th:text="${drink.name}"></h5>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="itemBox hotDrink col-sm-4 mx-1 my-3 fontS" th:each="drink: ${drinks}"
+                        th:if="${drink.type == 'hotDrink'}">
+
+                        <div class="product">
+                            <div class="img-container position-relative">
+                                <img src="data:image/jpeg;base64," th:attrappend="src=${drink.image}" class="store-img"
+                                    style="width: 250px; height: 250px;">
+                            </div>
+                            <div>
+
+                                <h5 th:text="${drink.name}"></h5>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="itemBox frappe col-sm-4 mx-1 my-3 fontS" th:each="drink: ${drinks}"
+                        th:if="${drink.type == 'frappe'}">
+
+                        <div class="product">
+                            <div class="img-container position-relative">
+                                <img src="data:image/jpeg;base64," th:attrappend="src=${drink.image}" class="store-img"
+                                    style="width: 250px; height: 250px;">
+                            </div>
+                            <div>
+
+                                <h5 th:text="${drink.name}"></h5>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="itemBox food col-sm-4 mx-1 my-3 fontS" th:each="food: ${foods}">
+
+                        <div class="product">
+                            <div class="img-container position-relative">
+                                <img src="data:image/jpeg;base64," th:attrappend="src=${food.image}" class="store-img"
+                                    style="width: 150px; height: 150px;">
+                            </div>
+                            <div>
+
+                                <h5 th:text="${food.name}" class="dname" th:id="${food.id}" style="cursor: pointer;">
+                                </h5>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <script>
+        $(document).ready(function () {
+            $('.type').click(function () {
+                const value = $(this).attr('data-filter');
+
+                if (value == 'all') {
+                    $('.itemBox').show('1000');
+                } else {
+                    $('.itemBox').not('.' + value).hide('1000');
+                    $('.itemBox').filter('.' + value).show('1000');
+                }
+            })
+
+            $('.type').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+        })
+
+        function search() {
+            let dataFilter = document.getElementById('find').value.toUpperCase();
+
+            let items = document.querySelectorAll('.product')
+            let list = document.getElementsByTagName('h5');
+
+            for (var i = 0; i <= list.length; i++) {
+                let aa = items[i].getElementsByTagName('h5')[0];
+
+                let value = aa.innerHTML || aa.innerText || aa.textContent;
+
+                if (value.toUpperCase().indexOf(dataFilter) > -1) {
+                    items[i].style.display = "";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+
+        // const search = () => {
+        //     const searchBox = document.getElementById("searchItems").value.toUpperCase();
+        //     const storeItems = document.getElementById("productList")
+        //     const product = document.querySelectorAll(".product")
+        //     // const productList = document.querySelectorAll("products")
+        //     const productList = storeItems.getElementsByTagName("h5")
+
+
+        //     for (var i = 0; i < productList.length; i++) {
+        //         let match = product[i].getElementsByTagName('h5')[0];
+        //         if (match) {
+        //             let textValue = match.textContent || match.innerHTML
+
+        //             if (textValue.toUpperCase().indexOf(searchBox) > -1) {
+        //                 product[i].style.display = "";
+        //             } else {
+        //                 product[i].style.display = "none";
+        //             }
+        //         }
+
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>
