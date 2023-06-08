@@ -35,19 +35,19 @@ public class userRegisterController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/register", method = RequestMethod.GET)
     public String registers(Model model) {
         model.addAttribute("register", new register());
         return "user/register";
     }
 
-    @GetMapping("/listCashier")
+    @GetMapping("/admin/listCashier")
     public String showCashiers(Model model) {
         model.addAttribute("cashiers", userService.getAllCashiers());
         return "user/listCashier";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/admin/register")
     public String registerAccount(@ModelAttribute("cashier") register user, @RequestParam("file") MultipartFile file) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         if (fileName.contains("..")) {
@@ -61,24 +61,24 @@ public class userRegisterController {
 
         }
         userService.saveCashier(user);
-        return "redirect:/register?success";
+        return "redirect:/admin/register?success";
     }
 
-    @GetMapping("/deleteCashier/{id}")
+    @GetMapping("/admin/deleteCashier/{id}")
     public String deleteCashier(@PathVariable("id") Long id) {
         registerRepository.deleteById(id);
-        return "redirect:/listCashier";
+        return "redirect:/admin/listCashier";
 
     }
 
-    @GetMapping("/editCashier/{id}")
+    @GetMapping("/admin/editCashier/{id}")
     public String editCashier(@PathVariable("id") Long id, @ModelAttribute("cashier") register cashier, Model model) {
         register existCashier = userService.getCashierById(id);
         model.addAttribute("cashier", existCashier);
         return "user/editCashiers";
     }
 
-    @PostMapping("/editCashier/{id}")
+    @PostMapping("/admin/editCashier/{id}")
     public String updateCashier(@PathVariable("id") Long id, @ModelAttribute("cashier") register cashier,
             @RequestParam("file") MultipartFile file) {
 
@@ -105,7 +105,7 @@ public class userRegisterController {
 
         }
         userService.saveCashier(cashier);
-        return "redirect:/listCashier";
+        return "redirect:/admin/listCashier";
     }
 
 }

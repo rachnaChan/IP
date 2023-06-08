@@ -55,17 +55,17 @@ public class drinkController {
 
     // @GetMapping("/orderHistory")
     // public String orderhistory(Model model) {
-    //     model.addAttribute("drinks", drinkServices.getAllDrink());
-    //     return "order/orderHistories";
+    // model.addAttribute("drinks", drinkServices.getAllDrink());
+    // return "order/orderHistories";
     // }
 
-    @RequestMapping(value = "/addDrink", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/addDrink", method = RequestMethod.GET)
     public String drinks(Model model) {
         model.addAttribute("drink", new drink());
         return "drink/addDrink";
     }
 
-    @GetMapping("/listDrink")
+    @GetMapping("/admin/listDrink")
     public String showDrinks(Model model) {
         model.addAttribute("drinks", drinkServices.getAllDrink());
         return "drink/listDrink";
@@ -73,14 +73,14 @@ public class drinkController {
 
     // @GetMapping(path = "/drinkOrder")
     // public String drinkOrder(Model model, HttpSession session) {
-    //     model.addAttribute("drinks", drinkServices.getAllDrink());
-    //     model.addAttribute("foods", foodServices.getAllFood());
-    //     // String tableSelected = (String) session.getAttribute("tableSelected");
-    //     // model.addAttribute("tableSelected", tableSelected);
-    //     return "drink/drinkOrder";
+    // model.addAttribute("drinks", drinkServices.getAllDrink());
+    // model.addAttribute("foods", foodServices.getAllFood());
+    // // String tableSelected = (String) session.getAttribute("tableSelected");
+    // // model.addAttribute("tableSelected", tableSelected);
+    // return "drink/drinkOrder";
     // }
 
-    @GetMapping(path = "/listDrinkAdmin")
+    @GetMapping(path = "/admin/listDrinkAdmin")
 
     public String drinkHome(Model model) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -92,7 +92,7 @@ public class drinkController {
         return "menu/listDrinkAdmin";
     }
 
-    @GetMapping(path = "/homepageCashier")
+    @GetMapping(path = "/cashier/homepageCashier")
     public String homepagecashier(Model model) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String usernameLoggend = ((UserDetails) principal).getUsername();
@@ -103,7 +103,7 @@ public class drinkController {
         return "menu/homepageCashier";
     }
 
-    @PostMapping("/addDrink")
+    @PostMapping("/admin/addDrink")
     public String addDrinks(@ModelAttribute("drink") drink drinks, @RequestParam("file") MultipartFile file) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         if (fileName.contains("..")) {
@@ -117,24 +117,24 @@ public class drinkController {
 
         }
         drinkServices.saveDrink(drinks);
-        return "redirect:/addDrink?success";
+        return "redirect:/admin/addDrink?success";
     }
 
-    @GetMapping("/deleteDrink/{id}")
+    @GetMapping("/admin/deleteDrink/{id}")
     public String deleteDrink(@PathVariable("id") Long id) {
         drinkRepository.deleteById(id);
-        return "redirect:/listDrink";
+        return "redirect:/admin/listDrink";
 
     }
 
-    @GetMapping("/editDrink/{id}")
+    @GetMapping("/admin/editDrink/{id}")
     public String editDrinks(@PathVariable("id") Long id, @ModelAttribute("drink") drink drinks, Model model) {
         drink existDrink = drinkServices.getDrinkById(id);
         model.addAttribute("drink", existDrink);
         return "drink/editDrinks";
     }
 
-    @PostMapping("/editDrink/{id}")
+    @PostMapping("/admin/editDrink/{id}")
     public String updateDrinks(@PathVariable("id") Long id, @ModelAttribute("drink") drink drinks,
             @RequestParam("file") MultipartFile file) {
 
@@ -159,7 +159,7 @@ public class drinkController {
 
         }
         drinkServices.saveDrink(drinks);
-        return "redirect:/listDrink";
+        return "redirect:/admin/listDrink";
     }
 
 }

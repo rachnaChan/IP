@@ -28,26 +28,25 @@ public class foodController {
     @Autowired
     private foodRepository foodRepositories;
 
-    public foodController(foodService foodServices){
+    public foodController(foodService foodServices) {
         super();
         this.foodServices = foodServices;
     }
 
-    @GetMapping("/listFood")
-    public String listfood(Model model){
+    @GetMapping("/admin/listFood")
+    public String listfood(Model model) {
         model.addAttribute("foods", foodServices.getAllFood());
         return "food/listFood";
     }
 
-    @RequestMapping(value = "/addFood", method= RequestMethod.GET)
-    public String addFood(Model model){
+    @RequestMapping(value = "/admin/addFood", method = RequestMethod.GET)
+    public String addFood(Model model) {
         model.addAttribute("foods", new food());
         return "food/addFood";
 
     }
 
-    
-    @PostMapping("/addFood")
+    @PostMapping("/admin/addFood")
     public String addFoods(@ModelAttribute("foods") food food, @RequestParam("file") MultipartFile file) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         if (fileName.contains("..")) {
@@ -61,28 +60,28 @@ public class foodController {
 
         }
         foodServices.saveFood(food);
-        return "redirect:/addFood?success";
+        return "redirect:/admin/addFood?success";
     }
 
-    @GetMapping("/deleteFood/{id}")
+    @GetMapping("/admin/deleteFood/{id}")
     public String deleteFoodk(@PathVariable("id") Long id) {
         foodRepositories.deleteById(id);
-        return "redirect:/listFood";
+        return "redirect:/admin/listFood";
 
     }
 
-    @GetMapping("/editFood/{id}")
+    @GetMapping("/admin/editFood/{id}")
     public String editFoods(@PathVariable("id") Long id, @ModelAttribute("foods") food food, Model model) {
         food existFood = foodServices.getFoodById(id);
         model.addAttribute("foods", existFood);
         return "food/editFoods";
     }
 
-    @PostMapping("/editFood/{id}")
+    @PostMapping("/admin/editFood/{id}")
     public String updateFoods(@PathVariable("id") Long id, @ModelAttribute("foods") food food,
             @RequestParam("file") MultipartFile file) {
 
-            food existedFood = foodServices.getFoodById(id);
+        food existedFood = foodServices.getFoodById(id);
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
         if (fileName.contains("..")) {
             System.out.println("not valid");
@@ -91,9 +90,9 @@ public class foodController {
         try {
             food.setId(id);
 
-            if(fileName == ""){
+            if (fileName == "") {
                 food.setImage(existedFood.getImage());
-            }else{
+            } else {
                 food.setImage(Base64.getEncoder().encodeToString(file.getBytes()));
             }
 
@@ -101,6 +100,6 @@ public class foodController {
 
         }
         foodServices.saveFood(food);
-        return "redirect:/listFood";
-    }  
+        return "redirect:/admin/listFood";
+    }
 }

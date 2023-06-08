@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -11,10 +12,10 @@ import cafe.i4a.cafe.drinkFoodOrder.drinkFoodOrder;
 
 import cafe.i4a.cafe.services.drink.drinkService;
 import cafe.i4a.cafe.services.food.foodService;
+import cafe.i4a.cafe.services.ordered.orderedService;
 import cafe.i4a.cafe.services.implementations.drink.drinkImplementation;
 import cafe.i4a.cafe.services.implementations.food.foodImplementation;
 import jakarta.servlet.http.HttpSession;
-
 
 @Controller
 public class drinkFoodController {
@@ -30,13 +31,16 @@ public class drinkFoodController {
     @Autowired
     private drinkImplementation drinkImplementations;
 
-    @GetMapping("/orderHistory")
+    @Autowired
+    private orderedService orderedServices;
+
+    @GetMapping("/admin/orderHistory")
     public String orderhistory(Model model) {
-        model.addAttribute("drinks", drinkServices.getAllDrink());
+        model.addAttribute("orderedd", orderedServices.getAllOrdered());
         return "order/orderHistories";
     }
 
-    @GetMapping(path = "/drinkFoodOrder")
+    @GetMapping(path = "/cashier/drinkFoodOrder")
     public String drinkOrder(Model model, HttpSession session) {
         model.addAttribute("drinks", drinkServices.getAllDrink());
         model.addAttribute("foods", foodServices.getAllFood());
@@ -46,25 +50,26 @@ public class drinkFoodController {
         return "drink/drinkFoodOrder";
     }
 
-    @PostMapping(path = "/drinkFoodOrder/confirm")
-    public String addToCart(@PathVariable("id") Long id, Model model){
-        
-       model.addAttribute("drinkOrder", drinkFoodOrder.cartDrinks.add(drinkImplementations.getDrinkById(id)));
+    @PostMapping(path = "/cashier/drinkFoodOrder/confirm/{id}")
+    public String addToCart(@PathVariable("id") Long id, @ModelAttribute ("dfordered") drinkFoodOrder drinkFoodOrders, Model model) {
 
-       model.addAttribute("foodOrder", drinkFoodOrder.cartFoods.add(foodImplementations.getFoodById(id)));
-        
+        model.addAttribute("dfordered", drinkFoodOrder.cartDrinks.add(drinkImplementations.getDrinkById(id)));
+
+        model.addAttribute("dfordered", drinkFoodOrder.cartFoods.add(foodImplementations.getFoodById(id)));
+
         // drinkFoodOrder.cartDrinks.add(drinkServices.getDrinkById(id).get());
         // drinkFoodOrder.cartFoods.add(foodServices.getFoodById(id).get());
-        return "redirect:/drinkFoodOrder";
+        return "redirect:/cashier/drinkFoodOrder";
 
     }
 
-    @GetMapping("/showOrderDrink")
-    public String showCart(Model model){
+    @GetMapping("/cashier/showOrderDrink")
+    public String showCart(Model model) {
         model.addAttribute("cartAmount", drinkFoodOrder.cartDrinks.size());
         model.addAttribute("cartAmount", drinkFoodOrder.cartFoods.size());
         model.addAttribute("cart", drinkFoodOrder.cartDrinks);
         model.addAttribute("cart", drinkFoodOrder.cartFoods);
         return "order/drinkFoodOrder";
     }
+
 }

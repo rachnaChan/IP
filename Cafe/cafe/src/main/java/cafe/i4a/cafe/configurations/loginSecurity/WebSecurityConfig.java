@@ -12,42 +12,42 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class webSecurityConfig  {
+public class webSecurityConfig {
 
   @Bean
   public UserDetailsService userDetailsService() {
-  return new customUserDetailsService();
+    return new customUserDetailsService();
   }
 
   @Bean
   public PasswordEncoder passwordEncoder() {
-  return NoOpPasswordEncoder.getInstance();
+    return NoOpPasswordEncoder.getInstance();
   }
 
   // @Bean
   // public BCryptPasswordEncoder passwordEncoder(){
-  //   return new BCryptPasswordEncoder();
+  // return new BCryptPasswordEncoder();
   // }
 
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-  http.authorizeHttpRequests(auth -> auth
-  .requestMatchers("/login").permitAll()
+    http.authorizeHttpRequests(auth -> auth
+        .requestMatchers("/login").permitAll()
+        .requestMatchers("/admin/**").hasAnyAuthority("Admin")
+        .requestMatchers("/cashier/**").hasAnyAuthority("Cashier")
+        .anyRequest().authenticated());
 
-  .anyRequest().authenticated()
-  );
-
-  http.formLogin()
-  .loginPage("/login")
-  .usernameParameter("username")
-  .successHandler(successHandler)
-  .loginProcessingUrl("/login")
-  .permitAll()
-  .and()
-  .logout().logoutUrl("/logout")
-  .logoutSuccessUrl("/login")
-  .permitAll();
-  return http.build();
+    http.formLogin()
+        .loginPage("/login")
+        .usernameParameter("username")
+        .successHandler(successHandler)
+        .loginProcessingUrl("/login")
+        .permitAll()
+        .and()
+        .logout().logoutUrl("/logout")
+        .logoutSuccessUrl("/login")
+        .permitAll();
+    return http.build();
 
   }
 

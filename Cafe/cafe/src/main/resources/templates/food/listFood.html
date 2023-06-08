@@ -51,13 +51,13 @@
         </button>
         <div class="collapse navbar-collapse w-75 justify-content-between" id="navbarNavAltMarkup">
             <div class="navbar-nav w-50 justify-content-between ml-50" style="margin-left: 40%;">
-                <a class="nav-item nav-link active" href="/" th:href="@{/listDrinkAdmin}" id="Home">
+                <a class="nav-item nav-link active" href="/" th:href="@{/admin/listDrinkAdmin}" id="Home">
                     <h5 class="fs-1">Home</h5>
                 </a>
-                <a class="nav-item nav-link" href="/" th:href="@{/listDrinkAdmin}" id="AboutUs">
+                <a class="nav-item nav-link" href="/" th:href="@{/admin/listDrinkAdmin}" id="AboutUs">
                     <h5 class="fs-1">About Us</h5>
                 </a>
-                <a class="nav-item nav-link" href="/" th:href="@{/listDrinkAdmin}" id="Menu">
+                <a class="nav-item nav-link" href="/" th:href="@{/admin/listDrinkAdmin}" id="Menu">
                     <h5 class="fs-1">Menu</h5>
                 </a>
                 <a class="nav-item nav-link" href="/" th:href="@{/logout}">
@@ -88,12 +88,12 @@
                     <td th:text="${food.name}" class="fname" th:id="${food.id}" style="cursor: pointer;"></td>
 
                     <td>
-                        <a th:href="@{/editFood/{id}(id=${food.id})}">
+                        <a th:href="@{/admin/editFood/{id}(id=${food.id})}">
                             <i class="bx bxs-edit-alt btn-success"></i>
                             Edit</a>
                     </td>
                     <td>
-                        <a th:href="@{/deleteFood/{id}(id=${food.id})}">
+                        <a th:href="@{/admin/deleteFood/{id}(id=${food.id})}">
                             <i class="bx bxs-trash btn-danger"></i>
                             Delete</a>
                     </td>
@@ -132,7 +132,7 @@
 
 
                 <div class="text-decoration-underline text-right">
-                    <a href="/" th:href="@{/addFood}">
+                    <a href="/" th:href="@{/admin/addFood}">
                         <h5 class="fs-4">Add Food</h5>
                     </a>
                 </div>

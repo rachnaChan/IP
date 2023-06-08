@@ -67,13 +67,13 @@
             </button>
             <div class="collapse navbar-collapse w-75 justify-content-between" id="navbarNavAltMarkup">
                 <div class="navbar-nav w-50 justify-content-between ml-50" style="margin-left: 40%;">
-                    <a class="nav-item nav-link active" href="/" th:href="@{/homepageCashier}" id="Home">
+                    <a class="nav-item nav-link active" href="/" th:href="@{/cashier/homepageCashier}" id="Home">
                         <h5 class="fs-1">Home</h5>
                     </a>
-                    <a class="nav-item nav-link" href="/" th:href="@{/homepageCashier}" id="AboutUs">
+                    <a class="nav-item nav-link" href="/" th:href="@{/cashier/homepageCashier}" id="AboutUs">
                         <h5 class="fs-1">About Us</h5>
                     </a>
-                    <a class="nav-item nav-link" href="/" th:href="@{/homepageCashier}" id="Menu">
+                    <a class="nav-item nav-link" href="/" th:href="@{/cashier/homepageCashier}" id="Menu">
                         <h5 class="fs-1">Menu</h5>
                     </a>
                     <a class="nav-item nav-link" href="/" th:href="@{/logout}">
@@ -133,7 +133,7 @@
                             <h5 th:class="${'stage'+tables.id}" th:text="${tables.stage}"></h5>
 
                             <div>
-                                <a th:href="@{/editTable/{id}(id=${tables.id})}"><i class="bx bxs-message-square-edit"></i> Edit</a>
+                                <a th:href="@{/cashier/editTable/{id}(id=${tables.id})}"><i class="bx bxs-message-square-edit"></i> Edit</a>
                             </div>
 
                         </div>
@@ -141,7 +141,7 @@
                     </div>
 
                     <form class="text-decoration-none text-right" >
-                        <a id="next" href="/" th:href="@{/drinkFoodOrder}">
+                        <a id="next" href="/" th:href="@{/cashier/drinkFoodOrder}">
                             <h5 class="fs-1">Next</h5>
                         </a>
                     </form>

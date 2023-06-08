@@ -50,13 +50,13 @@
         </button>
         <div class="collapse navbar-collapse w-75 justify-content-between" id="navbarNavAltMarkup">
             <div class="navbar-nav w-50 justify-content-between ml-50" style="margin-left: 40%;">
-                <a class="nav-item nav-link active" th:href="@{/listDrinkAdmin}" id="Home">
+                <a class="nav-item nav-link active" th:href="@{/admin/listDrinkAdmin}" id="Home">
                     <h5 class="fs-1">Home</h5>
                 </a>
-                <a class="nav-item nav-link" href="/" th:href="@{/listDrinkAdmin}" id="AboutUs">
+                <a class="nav-item nav-link" href="/" th:href="@{/admin/listDrinkAdmin}" id="AboutUs">
                     <h5 class="fs-1">About Us</h5>
                 </a>
-                <a class="nav-item nav-link" href="/" th:href="@{/listDrinkAdmin}" id="Menu">
+                <a class="nav-item nav-link" href="/" th:href="@{/admin/listDrinkAdmin}" id="Menu">
                     <h5 class="fs-1">Menu</h5>
                 </a>
                 <a class="nav-item nav-link" href="/" th:action="@{/logout}" method="post">
@@ -74,48 +74,46 @@
     <div class="row">
         <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 flex-wrap text-dark"
             sec:authorize="hasAnyAuthority('ADMIN')">
-            <a href="/addDrink" class="btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink">Add
+            <a href="/admin/addDrink" class="btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink">Add
                 Drink</a>
-            <a href="/register" class="btn btn-outline-secondary text-uppercase filter-btn m-2"
+            <a href="/admin/register" class="btn btn-outline-secondary text-uppercase filter-btn m-2"
                 data-filter="addCashier">Add Cashier</a>
-            <a href="/orderHistory" class=" btn btn-outline-secondary text-uppercase filter-btn m-2"
-                data-filter="history">OderHistory</a>
+            <a href="/admin/orderHistory" class=" btn btn-outline-secondary text-uppercase filter-btn m-2"
+                data-filter="history">OrderHistory</a>
 
         </div>
         <div class="w-75 border-dark h-auto m-auto mt-5" style="border: 1px solid;">
 
             <tr class="w-75 border-0 justify-content-between">
                 <th>ID </th>
-                <th>Name</th>
-                <th>Gender</th>
-                <th>Username</th>
-                <th>Email </th>
-                <th>Date of Birth</th>
-                <th>Hired Date</th>
+                <th>Cashier_received</th>
+                <th>Change</th>
+                <th>Order_date</th>
+                <th>Total price </th>
+                <th>table_id</th>
+                <th>Cashier_id</th>
                 <th>Action</th>
 
             </tr>
 
-            <tr th:each="cashier: ${cashiers}" class="mt-4 border-0">
-                <th th:text="${cashier.id}"> scope="row"</th>
-                <td th:text="${cashier.name}" class="cname" th:id="${cashier.id}" style="cursor: pointer;"></td>
-                <td th:text="${cashier.gender}"></td>
-                <td th:text="${cashier.username}"></td>
-                <td th:text="${cashier.email}"></td>
-                <td th:text="${cashier.dob}"></td>
-                <td th:text="${cashier.date}"></td>
+            <!-- <tr th:each="ordered: ${orderedd}" class="mt-4 border-0">
+                <th th:text="${odered.id}"> scope="row"</th>
+                <td th:text="${ordered.cash_received}"></td>
+                <td th:text="${ordered.changed}"></td>
+                <td th:text="${ordered.order_date}"></td>
+                <td th:text="${ordered.total_price}"></td>
+                <td th:text="${ordered.table_id}"></td>
+                <td th:text="${ordered.cashier_id}"></td>
                 <td>
-                    <a th:href="@{/editCashier/{id}(id=${cashier.id})}">
-                        <i class="bx bxs-edit"></i>
-                        Edit</a>
+                   
                 </td>
                 <td>
-                    <a th:href="@{/deleteCashier/{id}(id=${cashier.id})}">
+                    <a th:href="@{/deleteOrdered/{id}(id=${ordered.id})}">
                         <i class="bx bxs-trash"></i>
                         Delete</a>
                 </td>
 
-            </tr>
+            </tr> -->
         </div>
     </div>
 

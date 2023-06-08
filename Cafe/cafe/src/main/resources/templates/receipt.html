@@ -49,13 +49,13 @@
         </button>
         <div class="collapse navbar-collapse w-75 justify-content-between" id="navbarNavAltMarkup">
           <div class="navbar-nav w-50 justify-content-between ml-50" style="margin-left: 40%;">
-            <a class="nav-item nav-link active" href="/" th:href="@{/homepageCashier}" id="Home">
+            <a class="nav-item nav-link active" href="/" th:href="@{/cashier/homepageCashier}" id="Home">
               <h5 class="fs-1">Home</h5>
             </a>
-            <a class="nav-item nav-link" href="/" th:href="@{/homepageCashier}" id="AboutUs">
+            <a class="nav-item nav-link" href="/" th:href="@{/cashier/homepageCashier}" id="AboutUs">
               <h5 class="fs-1">About Us</h5>
             </a>
-            <a class="nav-item nav-link" href="/" th:href="@{/homepageCashier}" id="Menu">
+            <a class="nav-item nav-link" href="/" th:href="@{/cashier/homepageCashier}" id="Menu">
               <h5 class="fs-1">Menu</h5>
             </a>
             <a class="nav-item nav-link" href="/" th:href="@{/logout}">
@@ -66,9 +66,9 @@
       </nav>
     
 
-    <div class="payment d-flex h-100 mt-5 border-1 justify-content-between m-auto">
+    <div class="payment h-100 mt-5 border-1 justify-content-between m-auto">
         <div class="tapOne border-1 h-100 m-auto" style="width: 90%;">
-            <div class="d-flex navbar bg-transparent">
+            <div class="d-flex navbar bg-transparent"  >
                 <h4>GST Number : 491048712</h4>
                 <img src="../img/logo.png" alt="logo" style="width: 4rem; height: 50px;">
             </div>
@@ -77,7 +77,7 @@
 
                 <body>
                     <tr>
-                        <td>Date : <span>1/5/20223</span></td>
+                        <td>Date : <span >1/5/20223</span></td>
                         <td>Time : <span>2:30</span></td>
                     </tr>
                     <tr>
@@ -161,6 +161,11 @@
 
         </div>
 
+        <div>
+            <a href="/" th:href="@{/cashier/homepageCashier}">
+                <h5 class="fs-1 text-decoration-none text-right">Done</h5>
+              </a>
+        </div>
         <!-- <div class="tapTwo border-1 mt-0 ">
             <div class="buttonPayment mt-3">
                 <button class="text-danger ">
@@ -182,9 +187,11 @@
         </div> -->
 
 
+    
 
     </div>
 
 </body>
 
 </html>
+

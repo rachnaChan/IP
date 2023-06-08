@@ -8,11 +8,11 @@
     <title>Login</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500&display=swap');
-
+/* 
         .container {
             background-image: url(../img/login.png);
             height: 500px;
-        }
+        } */
     </style>
 </head>
 
@@ -29,7 +29,7 @@
         </div>
     </section>
 
-    <div class="container border border-dark img-fluid mt-5">
+    <div class="container border border-dark img-fluid mt-5" style="background-image:  url(../img/login.png) !important; height: 500px;">
 
         <section class="vh-50 mx-5">
             <div class="row d-flex justify-content-center align-items-center h-50">
@@ -50,13 +50,13 @@
 
                         <!-- Username input -->
                         <div class="form-outline mb-4">
-                            <label class="form-label" for="username">Username</label>
+                            <label class="form-label fs-1" for="username">Username</label>
                             <input type="text" id="username" name="username" class="form-control form-control-lg "
                                 placeholder="Username" autofocus="autofocus" />
                         </div>
                         <!-- Password input -->
                         <div class="form-outline mb-3">
-                            <label class="form-label" for="password">Password</label>
+                            <label class="form-label fs-1" for="password">Password</label>
                             <input type="password" id="password" name="password" class="form-control form-control-lg"
                                 placeholder="Password" autofocus="autofocus" />
                         </div>

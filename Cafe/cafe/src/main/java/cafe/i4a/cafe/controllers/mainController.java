@@ -15,20 +15,20 @@ public class mainController {
 
     // @GetMapping(path = "/admin")
     // public Object admins() {
-    //     return new ModelAndView("menu/admin");
+    // return new ModelAndView("menu/admin");
     // }
 
-    @GetMapping(path = "/calculator")
+    @GetMapping(path = "/cashier/calculator")
     public Object calculators() {
         return new ModelAndView("calculator");
     }
 
-    @GetMapping(path = "/receipt")
+    @GetMapping(path = "/cashier/receipt")
     public Object receipts() {
         return new ModelAndView("receipt");
     }
 
-    @GetMapping(path = "/test")
+    @GetMapping(path = "/cashier/test")
     public Object editDrinkssss() {
         return new ModelAndView("add-edit");
     }

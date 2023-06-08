@@ -72,13 +72,13 @@
         </button>
         <div class="collapse navbar-collapse w-75 justify-content-between" id="navbarNavAltMarkup">
             <div class="navbar-nav w-50 justify-content-between ml-50" style="margin-left: 40%;">
-                <a class="nav-item nav-link active" href="/" th:href="@{/listDrinkAdmin}" id="Home">
+                <a class="nav-item nav-link active" href="/" th:href="@{/admin/listDrinkAdmin}" id="Home">
                     <h5 class="fs-1">Home</h5>
                 </a>
-                <a class="nav-item nav-link" href="/" th:href="@{/listDrinkAdmin}" id="AboutUs">
+                <a class="nav-item nav-link" href="/" th:href="@{/admin/listDrinkAdmin}" id="AboutUs">
                     <h5 class="fs-1">About Us</h5>
                 </a>
-                <a class="nav-item nav-link" href="/" th:href="@{/listDrinkAdmin}" id="Menu">
+                <a class="nav-item nav-link" href="/" th:href="@{/admin/listDrinkAdmin}" id="Menu">
                     <h5 class="fs-1">Menu</h5>
                 </a>
                 <a class="nav-item nav-link" href="/" th:href="@{/logout}">
@@ -102,7 +102,7 @@
                     </div>
 
 
-                    <form method="Post" th:action="@{/addTable}" modelAttribute="tables" th:object="${tables}">
+                    <form method="Post" th:action="@{/admin/addTable}" modelAttribute="tables" th:object="${tables}">
 
                         <!-- Number input -->
                         <div class="form-outline mb-4">
@@ -127,7 +127,7 @@
                     </form>
 
                     <div class="d-flex justify-content-center align-items-center mt-5">
-                        <a class="mb-2 text-decoration-underline" href="/" th:href="@{/listTable}">View List Table</a>
+                        <a class="mb-2 text-decoration-underline" href="/" th:href="@{/admin/listTable}">View List Table</a>
                     </div>
                 </div>
 

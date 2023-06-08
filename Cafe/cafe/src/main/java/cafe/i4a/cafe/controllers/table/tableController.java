@@ -24,7 +24,7 @@ public class tableController {
     @Autowired
     private tableRepository tableRepositories;
 
-    @GetMapping("/tableSelection")
+    @GetMapping("/cashier/tableSelection")
     public String tableSelection(Model model, HttpSession session) {
         model.addAttribute("tables", tableService.getAllTables());
         table Table = new table();
@@ -32,52 +32,51 @@ public class tableController {
         return "table/tableSelection";
     }
 
-    @RequestMapping(value = "/addTable", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/addTable", method = RequestMethod.GET)
     public String tables(Model model) {
         model.addAttribute("tables", new table());
         return "table/addTable";
     }
 
-    @GetMapping("/listTable")
+    @GetMapping("/admin/listTable")
     public String showTables(Model model) {
         model.addAttribute("tables", tableService.getAllTables());
         return "table/listTable";
     }
 
-    @PostMapping("/addTable")
+    @PostMapping("/admin/addTable")
     public String addTables(@ModelAttribute("tables") table tables) {
 
         tableService.saveTables(tables);
         return "redirect:/addTable?success";
     }
 
-    @GetMapping("/editTable/{id}")
+    @GetMapping("/cashier/editTable/{id}")
     public String editTables(@PathVariable("id") Long id, @ModelAttribute("tables") table tables, Model model) {
         table existTable = tableService.getTableById(id);
         model.addAttribute("tables", existTable);
         return "table/editTables";
     }
 
-
-    @PostMapping("/editTable/{id}")
+    @PostMapping("/cashier/editTable/{id}")
     public String updateTables(@PathVariable("id") Long id, @ModelAttribute("tables") table tables) {
 
         tableService.saveTables(tables);
         return "table/editTables";
     }
 
-    @PostMapping("/order/table/{id}")
+    @PostMapping("/cashier/order/table/{id}")
     public String selectedTable(@PathVariable("id") Long id, Model model, HttpSession session) {
         String tableId = (String) session.getAttribute("tableSelected");
         tableId = id.toString();
         session.setAttribute("tableSelected", tableId);
-        return "redirect:/drinkOrder";
+        return "redirect:/drinkFoodOrder";
     }
 
-    @GetMapping("/deleteTable/{id}")
+    @GetMapping("/admin/deleteTable/{id}")
     public String deleteFoodk(@PathVariable("id") Long id) {
-    tableRepositories.deleteById(id);
-        return "redirect:/listTable";
+        tableRepositories.deleteById(id);
+        return "redirect:/admin/listTable";
 
     }
 }
