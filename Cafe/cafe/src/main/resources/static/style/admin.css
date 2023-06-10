@@ -48,6 +48,7 @@ h2 {
 .tapOne {
   width: 50%;
   border: 2px solid rgb(0, 0, 0);
+  background:linear-gradient(to right, #91e9e3, #f9c2c2);
 }
 
 .tapTwo {

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import cafe.i4a.cafe.models.cashier.register;
 import cafe.i4a.cafe.repositories.cashier.registerRepository;
@@ -46,6 +47,20 @@ public class userRegisterController {
         model.addAttribute("cashiers", userService.getAllCashiers());
         return "user/listCashier";
     }
+
+    @GetMapping("/login")
+    public ModelAndView LoginAcc() {
+        ModelAndView mav = new ModelAndView("login");
+
+        // model.addAttribute("cashiers", userService.getAllCashiers());
+        return mav;
+    }
+
+    // @GetMapping(path = "/login")
+    // public String LoginAcc(Model model) {
+    //     model.addAttribute("login");
+    //     return "/login";
+    // }
 
     @PostMapping("/admin/register")
     public String registerAccount(@ModelAttribute("cashier") register user, @RequestParam("file") MultipartFile file) {

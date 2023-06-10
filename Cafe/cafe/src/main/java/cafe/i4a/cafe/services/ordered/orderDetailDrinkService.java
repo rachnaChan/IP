@@ -7,5 +7,5 @@ import cafe.i4a.cafe.models.orderDetailDrink.orderedDetailDrinks;
 public interface orderDetailDrinkService {
     List<orderedDetailDrinks> getAllOrderedDrink();
     orderedDetailDrinks saveOrderedDrink(orderedDetailDrinks orderedDrink);
-    orderedDetailDrinks getOrderedDrinkById(long id);   
+    orderedDetailDrinks getOrderedDrinkById(Long id);   
 }

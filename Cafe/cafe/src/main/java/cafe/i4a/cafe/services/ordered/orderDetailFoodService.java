@@ -8,5 +8,5 @@ public interface orderDetailFoodService {
     
     List<orderedDetailFoods> getAllOrderedFood();
     orderedDetailFoods saveOrderedFood(orderedDetailFoods orderedFood);
-    orderedDetailFoods getOrderedFoodById(long id);
+    orderedDetailFoods getOrderedFoodById(Long id);
 }

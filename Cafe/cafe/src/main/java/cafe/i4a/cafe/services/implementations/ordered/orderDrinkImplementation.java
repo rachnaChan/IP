@@ -26,11 +26,27 @@ public class orderDrinkImplementation implements orderDetailDrinkService {
        return this.orderedDrinkRepositories.save(orderedDrink);
     }
 
-
     @Override
-    public orderedDetailDrinks getOrderedDrinkById(long id) {
+    public orderedDetailDrinks getOrderedDrinkById(Long id) {
        return orderedDrinkRepositories.findById(id).get();
     }
+
+
+
+    
+    // @Override
+    // public orderedDetailDrinks updateVieId(Long id, orderedDetailDrinks neworderDetailDrinks) {
+    //     orderedDetailDrinks existorderedDrink = new orderedDetailDrinks();
+    //     existorderedDrink = orderedDrinkRepositories.findById(id).get();
+    //     existorderedDrink.setAmount(neworderDetailDrinks.getAmount());
+    //     existorderedDrink.setDrinkSize(neworderDetailDrinks.getDrinkSize());
+
+        
+
+    //     return orderedDrinkRepositories.save(neworderDetailDrinks);
+    // }
+
+    
 
 
     

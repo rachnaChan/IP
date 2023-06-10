@@ -6,13 +6,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Login</title>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500&display=swap');
-/* 
+
         .container {
-            background-image: url(../img/login.png);
+            background: url(https://img.freepik.com/premium-vector/watercolor-poster-with-reading-girl-home-interior-with-cats-background-bookshelves_539709-154.jpg?w=360);
             height: 500px;
-        } */
+        }
     </style>
 </head>
 
@@ -29,7 +30,10 @@
         </div>
     </section>
 
-    <div class="container border border-dark img-fluid mt-5" style="background-image:  url(../img/login.png) !important; height: 500px;">
+    <!-- <div class="container border border-dark img-fluid mt-5" style="background:  url(/img/login.png) ; height: 500px;"> -->
+         <!--  th:style="'background: url([[@{/img/login.png}]]); height: 500px;'" -->
+    <div class="container border border-dark img-fluid mt-5">
+
 
         <section class="vh-50 mx-5">
             <div class="row d-flex justify-content-center align-items-center h-50">
@@ -37,11 +41,12 @@
 
                     <!-- <h1 class="text-muted mt-5 text-center fs-1" style="font-family: 'Dosis';">Login</h1> -->
 
-                    <form style="position: absolute;" method="post" th:action="@{/login}" th:object="${user}">
+                    <form style="position: absolute;" method="post" th:action="@{/login}">
+                        <!-- th:object="${user}" -->
 
                         <div th:if="${param.error}">
-                            <div class="alert alert-danger">Invalid username or
-                                password.</div>
+                            <div class="alert alert-danger">Make sure your Username or
+                                Password is valid!!</div>
                         </div>
 
                         <div th:if="${param.logout}">
@@ -54,14 +59,16 @@
                             <input type="text" id="username" name="username" class="form-control form-control-lg "
                                 placeholder="Username" autofocus="autofocus" />
                         </div>
+
                         <!-- Password input -->
                         <div class="form-outline mb-3">
                             <label class="form-label fs-1" for="password">Password</label>
                             <input type="password" id="password" name="password" class="form-control form-control-lg"
                                 placeholder="Password" autofocus="autofocus" />
                         </div>
+
                         <div>
-                            <button type="submit" class="btn btn-primary" th:href="@{/table}"
+                            <button type="submit" class="btn btn-primary"
                                 style="padding-left: 1.5rem; padding-right: 1.5rem; margin-left: 30rem; font-size: 15px;">Sign
                                 In</button>
                         </div>

@@ -15,7 +15,7 @@ public class customUserDetailsService implements UserDetailsService {
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     register users = userRepo.findByUsername(username);
     if (users == null) {
-      throw new UsernameNotFoundException("User Not Founded in our Cafe!!");
+      throw new UsernameNotFoundException("Make sure your Username or Password is valid!!");
     }
     return new customUserDetails(users);
   }

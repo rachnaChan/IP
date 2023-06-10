@@ -33,9 +33,9 @@ public class mainController {
         return new ModelAndView("add-edit");
     }
 
-    @GetMapping(path = "/login")
-    public Object LoginAcc() {
-        return new ModelAndView("login");
-    }
+    // @GetMapping(path = "/login")
+    // public Object LoginAcc() {
+    //     return new ModelAndView("login");
+    // }
 
 }

@@ -34,7 +34,9 @@ public class orderedDetailDrinks {
 	@JoinColumn(name = "drinksize_id")
 	private drinkSize DrinkSize;
 
-	public orderedDetailDrinks() {};
+	public orderedDetailDrinks() {
+
+	};
 
 	public orderedDetailDrinks(double totalPrice, Long amount, drink drink, drinkSize drinkSize) {
 		this.totalPrice = totalPrice;
@@ -80,6 +82,25 @@ public class orderedDetailDrinks {
 		return Drink;
 	}
 
+	public drink getDrink() {
+		return Drink;
+	}
+
+	public void setDrink(drink drink) {
+		Drink = drink;
+	}
+
+	// public orderedDetailDrinks(Long id, double totalPrice, Long amount, drink drink, drinkSize drinkSize) {
+	// 	this.id = id;
+	// 	this.totalPrice = totalPrice;
+	// 	this.amount = amount;
+	// 	Drink = drink;
+	// 	DrinkSize = drinkSize;
+	// }
+
+
+
+	
 	
 
 

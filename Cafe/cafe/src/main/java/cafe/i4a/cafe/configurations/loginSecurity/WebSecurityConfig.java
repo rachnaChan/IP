@@ -32,20 +32,21 @@ public class webSecurityConfig {
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests(auth -> auth
-        .requestMatchers("/login").permitAll()
+        .requestMatchers("/").permitAll()
         .requestMatchers("/admin/**").hasAnyAuthority("Admin")
         .requestMatchers("/cashier/**").hasAnyAuthority("Cashier")
         .anyRequest().authenticated());
 
     http.formLogin()
         .loginPage("/login")
+        // .defaultSuccessUrl("/login")
         .usernameParameter("username")
         .successHandler(successHandler)
         .loginProcessingUrl("/login")
         .permitAll()
         .and()
         .logout().logoutUrl("/logout")
-        .logoutSuccessUrl("/login")
+        .logoutSuccessUrl("/")
         .permitAll();
     return http.build();
 

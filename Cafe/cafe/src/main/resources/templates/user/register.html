@@ -91,10 +91,10 @@
 
                 <div class=" offset-xl-1" style="width: 60%;">
 
-                    <h2 class="text-center text-info"> Add New Cashier</h2>
+                    <h2 class="text-center text-info"> Add New User</h2>
 
                     <div th:if="${param.success}">
-                        <div class="alert alert-info">Cashier has been added successfully!!</div>
+                        <div class="alert alert-info">User has been added successfully!!</div>
                     </div>
 
                     <form th:action="@{/admin/register}" method="post" th:object="${register}" modelAttribute="register"
@@ -193,7 +193,7 @@
 
                             <div class="d-flex justify-content-center align-items-center mt-5">
                                 <a class="mb-2 text-decoration-underline" href="/" th:href="@{/admin/listCashier}">View List
-                                    Cashier</a>
+                                    Users</a>
                             </div>
 
                             <div class="d-flex justify-content-center align-items-center mt-2">

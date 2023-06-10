@@ -89,3 +89,17 @@ for (let cashier of cashiers) {
 
 var btnCashier = document.getElementById("cashiers")
 // var 
+
+
+$(function () {
+  $("#content-1").mCustomScrollbar({
+      theme: "rounded-dots-dark"
+  });
+
+  // $("#content-2").mCustomScrollbar({
+  //     theme: "rounded-dots-dark"
+  // });
+  // $("#content-3").mCustomScrollbar({
+  //     theme: "rounded-dots-dark"
+  // });
+});

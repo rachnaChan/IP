@@ -26,8 +26,18 @@ public class orderFoodImplementation implements orderDetailFoodService{
     }
 
     @Override
-    public orderedDetailFoods getOrderedFoodById(long id) {
+    public orderedDetailFoods getOrderedFoodById(Long id) {
        return orderFoodRepositories.findById(id).get();
     }
     
+    // @Override
+    // public orderedDetailFoods updateVieId(Long id, orderedDetailFoods neworderDetailFoods) {
+    //     orderedDetailFoods existorderedFood = new orderedDetailFoods();
+    //     existorderedFood = orderFoodRepositories.findById(id).get();
+    //     existorderedFood.setAmount(neworderDetailFoods.getAmount());
+
+        
+
+    //     return orderFoodRepositories.save(neworderDetailFoods);
+    // }
 }
