@@ -48,7 +48,7 @@ public class tableController {
     public String addTables(@ModelAttribute("tables") table tables) {
 
         tableService.saveTables(tables);
-        return "redirect:/addTable?success";
+        return "redirect:/admin/addTable?success";
     }
 
     @GetMapping("/cashier/editTable/{id}")

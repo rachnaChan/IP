@@ -50,7 +50,6 @@
         .img-container:hover {
             transform: translate(0, 0);
         }
-
     </style>
 </head>
 
@@ -129,7 +128,8 @@
 
             <div class="custom-scrollbar-js mt-5 justify-content-between p-2" id="content-1">
 
-                <div class="productList align-items-center justify-content-between m-auto text-center position-relative">
+                <div
+                    class="productList align-items-center justify-content-between m-auto text-center position-relative">
 
                     <div class="itemBox coolDrink col-sm-4 mx-1 my-3 fontS" th:each="drink: ${drinks}"
                         th:if="${drink.type == 'coolDrink'}">

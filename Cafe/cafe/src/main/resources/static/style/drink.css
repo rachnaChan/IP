@@ -22,7 +22,7 @@
 .tapTwo {
   width: 50%;
   border: 2px solid rgb(0, 0, 0);
-  background:linear-gradient(to right, #91e9e3, #f9c2c2);
+  background: linear-gradient(to right, #91e9e3, #f9c2c2);
   height: 564px;
 }
 
@@ -36,6 +36,7 @@
   background-color: rgba(255, 253, 253, 0.699);
   height: 420px;
 }
+
 .custom-scrollbar-jss {
   width: 100%;
   /* background-color: rgba(255, 253, 253, 0.699); */
@@ -155,13 +156,14 @@ p {
   font-family: 'Dosis';
 }
 
-h5{
+h5 {
   font-family: 'Dosis';
   text-align: center;
 }
 
 .navbar {
-  background-color: aliceblue;
+  background: linear-gradient(to right, #848585, #dcf5fa, #efc9e9, #848585);
+  height: 100px;
   height: 100px;
 }
 

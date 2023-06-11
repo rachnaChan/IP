@@ -39,7 +39,7 @@ public class drinkImplementation implements drinkService {
             existDrink.setImage(existDrink.getImage());
         }
         
-        // existDrink.setDcode(newDrink.getDcode());
+        existDrink.setDcode(newDrink.getDcode());
 
         return drinkrepository.save(newDrink);
 

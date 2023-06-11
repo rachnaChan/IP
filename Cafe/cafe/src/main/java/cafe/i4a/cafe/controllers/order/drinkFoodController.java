@@ -12,6 +12,7 @@ import cafe.i4a.cafe.drinkFoodOrder.drinkFoodOrder;
 
 import cafe.i4a.cafe.services.drink.drinkService;
 import cafe.i4a.cafe.services.food.foodService;
+//import cafe.i4a.cafe.services.ordered.orderDetailDrinkService;
 import cafe.i4a.cafe.services.ordered.orderedService;
 import cafe.i4a.cafe.services.implementations.drink.drinkImplementation;
 import cafe.i4a.cafe.services.implementations.food.foodImplementation;
@@ -44,6 +45,9 @@ public class drinkFoodController {
     public String drinkOrder(Model model, HttpSession session) {
         model.addAttribute("drinks", drinkServices.getAllDrink());
         model.addAttribute("foods", foodServices.getAllFood());
+        // model.addAttribute("dfordered", orderDetailDrinkService.getAllOrderedDrink());
+        // model.addAttribute("dfordered", orderDetailFoodService.getAllOrderedFood());
+
         // model.addAttribute("invoice", )
         // String tableSelected = (String) session.getAttribute("tableSelected");
         // model.addAttribute("tableSelected", tableSelected);

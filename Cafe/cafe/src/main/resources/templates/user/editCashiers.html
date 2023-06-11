@@ -132,11 +132,13 @@
                             </div>
 
                             <!-- Gender input -->
-                            <div class="form-outline mb-4">
-                                <label class="form-label" for="gender">Gender</label>
-                                <input type="text" id="gender" class="form-control form-control-lg" name="gender"
-                                    th:field="*{gender}" required autofocus="autofocus" />
-
+                            <div class="form-outline mb-4 d-flex">
+                                <h5 class="form-label mx-4" for="gender">Gender : </h5>
+                                <select id="gender" name="gender" th:field="*{gender}" placeholder="Gender">
+                                    <option th:field="*{gender}" value="null">-</option>
+                                    <option th:field="*{gender}" value="Female">Female</option>
+                                    <option th:field="*{gender}" value="Male">Male</option>
+                                </select>
                             </div>
 
 

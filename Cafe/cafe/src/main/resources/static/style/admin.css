@@ -1,9 +1,10 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 p {
   font-size: 4rem;
-  font-family: 'Dosis';
+  font-family: 'Pacifico', cursive;
   text-align: center;
   margin-top: 8px;
 }
@@ -14,7 +15,8 @@ h2 {
 }
 
 .navbar {
-  background-color: aliceblue;
+  background: linear-gradient(to right, #848585, #efc9e9, #dcf5fa, #848585);
+  height: 100px;
   height: 100px;
 }
 
@@ -48,7 +50,7 @@ h2 {
 .tapOne {
   width: 50%;
   border: 2px solid rgb(0, 0, 0);
-  background:linear-gradient(to right, #91e9e3, #f9c2c2);
+  background: linear-gradient(to right, #91e9e3, #f9c2c2);
 }
 
 .tapTwo {
@@ -126,8 +128,8 @@ h2 {
   border-radius: 10px;
 }
 
-.row{
-    height:40px;
+.row {
+  height: 40px;
 }
 
 .price::before {
@@ -136,6 +138,6 @@ h2 {
 
 }
 
-.infoDetail:hover{
+.infoDetail:hover {
   background-color: aliceblue;
 }

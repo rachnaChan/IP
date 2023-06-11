@@ -14,7 +14,8 @@ h2 {
 }
 
 .navbar {
-  background-color: aliceblue;
+  background: linear-gradient(to right, #848585, #efc9e9, #dcf5fa, #848585);
+  height: 100px;
   height: 100px;
 }
 
@@ -38,6 +39,12 @@ h2 {
 .container {
   width: 100%;
   /* background-color: rgb(250, 237, 242); */
+}
+
+.scroll-bar {
+  width: 100%;
+  /* background-color: rgb(250, 237, 242); */
+  height: 570px;
 }
 
 .tapOne {
