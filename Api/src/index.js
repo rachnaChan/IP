@@ -3,9 +3,9 @@ const express= require('express')
 var cors = require('cors')
 const mongoose=require('mongoose')
 const app=express()
-const userRouter=require('./model/router/user')
-const productRouter=require('./model/router/product')
-const categoryRouter=require('./model/router/cateogry')
+const userRouter=require('./router/user')
+const productRouter=require('./router/product')
+const categoryRouter=require('./router/cateogry')
 
 
 
