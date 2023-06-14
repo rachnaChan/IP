@@ -1,10 +1,10 @@
 const express =require('express')
 const router=express.Router()
-const User=require('../model/user')
+const User=require('../../model/user')
 const jwt=require('jsonwebtoken')
 const bcrypt = require('bcrypt');
-const {check_login,check_register,check_credentail} =require('../middleware/user_check_req')
-const TokenValidation =require('../middleware/TokenValidation')
+const {check_login,check_register,check_credentail} =require('../../middleware/user_check_req')
+const TokenValidation =require('../../middleware/TokenValidation')
 
 router.post('/login',check_login,async(req,res)=>{
     const data=req.body;

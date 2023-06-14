@@ -1,15 +1,15 @@
 <template>
-    <div>
-      <h1>Hello this is menu page</h1>
-    </div>
-  </template>
+ 
+
+
+</template>
   
-  <script setup>
+<script setup>
+
+</script>
   
-  </script>
-  
-  <style lang="scss" scoped>
-  *{
+<style lang="scss" scoped>
+* {
   box-sizing: border-box;
 }
-  </style>
+</style>

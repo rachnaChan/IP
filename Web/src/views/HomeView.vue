@@ -42,15 +42,15 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 flex-wrap text-dark">
-            <a class="type active btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="all"  @click="isAll=true">all</a>
-            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" date-filter="cake" @click="index=0;isAll=false">cake</a>
+        <div class="row d-flex justify-content-between">
+          <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 flex-wrap text-dark" >
+            <div class=" btn btn-outline-secondary text-uppercase filter-btn m-2 justify-content-between d-flex" v-for="item in category" :key="item._id" @click="isAll=true">{{item.name}}</div>
+            <!-- <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" date-filter="cake" @click="index=0;isAll=false">cake</a>
             <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cookie" @click="index=1;isAll=false">cookie</a>
             <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cupcake" @click="index=2;isAll=false">cupCake</a>
             <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="donut" @click="index=3;isAll=false">donut</a>
             <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink" @click="index=4;isAll=false">drink</a>
-            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="gummy" @click="index=5;isAll=false">gummy</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="gummy" @click="index=5;isAll=false">gummy</a> -->
           </div>
         </div>
 
@@ -74,7 +74,7 @@
           </div>
         </div>
 
-        <div class="row align-items-center w-90">
+        <div class="row align-items-center w-90 m-auto justify-content-between">
 
           <div  class="itemBox col-sm-3 mx-1 my-3  c0 c1 " v-for="item in data" :key="item._id" >
             <div class=" mt-3">
@@ -84,7 +84,7 @@
               <div>
                 <div class=" d-flex justify-content-between text-capitalize">
                   <!-- {{ data from mongoosdb}} -->
-                  <h5>{{ item.name }}</h5>
+                  <h5>{{ item.name }} </h5>
                   <h5><strong>{{ item.price }}</strong>$</h5>
                 </div>
               </div>
@@ -106,11 +106,18 @@ import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
 const index=ref(0)
 const data=ref()
+const category=ref()
 
 fetch("http://localhost:8000/api/product")
 .then(res=>res.json())
 .then(d=>{
   data.value=d
+})
+
+fetch("http://localhost:8000/api/category")
+.then(res=>res.json())
+.then(c=>{
+  category.value=c
 })
 
 </script>

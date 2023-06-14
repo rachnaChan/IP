@@ -1,7 +1,7 @@
 const express =require('express')
 const router=express.Router()
-const TokenValidation =require('../middleware/TokenValidation')
-const Category=require('../model/category')
+const TokenValidation =require('../../middleware/TokenValidation')
+const Category=require('../../model/category')
 const { model } = require('mongoose')
 
 router.get('/',async(req,res)=>{

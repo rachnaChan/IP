@@ -1,8 +1,8 @@
 const express =require('express')
 const router=express.Router()
-const User=require('../model/user')
-const TokenValidation =require('../middleware/TokenValidation')
-const Product=require('../model/product')
+const User=require('../../model/user')
+const TokenValidation =require('../../middleware/TokenValidation')
+const Product=require('../../model/product')
 const multer = require("multer");
 const path=require('path')
 const { route } = require('./user')
