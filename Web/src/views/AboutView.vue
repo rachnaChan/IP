@@ -109,10 +109,11 @@
         </div>
 
         <div class="text-right">
-              <RouterLink :to="{ name: 'menu' }">
-                <p class="fs-3 text-danger text-decoration-underline" style="text-align:right; font-family: 'Dokdo'; margin-right: 5%;">Start Now</p>
-              </RouterLink>
-            </div>
+          <RouterLink :to="{ name: 'menu' }">
+            <p class="fs-3 text-danger text-decoration-underline"
+              style="text-align:right; font-family: 'Dokdo'; margin-right: 5%;">Start Now</p>
+          </RouterLink>
+        </div>
 
       </div>
     </div>

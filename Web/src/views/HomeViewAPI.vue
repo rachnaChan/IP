@@ -4,38 +4,43 @@
     <section class="about py-5">
       <div class="container m-auto justify-content-between d-flex">
         <!-- <div class="col-10 col-md-6 align-self-center my-5">
-                <div>
-                  <div>
-                    <img src="../assets/Img/cake04.jpg" class="img-fluid" alt="">
-                  </div>
-    
-                </div>
-              </div> -->
+            <div>
+              <div>
+                <img src="../assets/Img/cake04.jpg" class="img-fluid" alt="">
+              </div>
+
+            </div>
+          </div> -->
 
         <!-- <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                  </div>
-                  <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
-                  </div>
-                </div>
-              </div> -->
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p class="title">FLIP CARD</p>
+                <p>Hover Me</p>
+              </div>
+              <div class="flip-card-back">
+                <p class="title">BACK</p>
+                <p>Leave Me</p>
+              </div>
+            </div>
+          </div> -->
 
-        <div class="card mt-5 img-fluid">Hello!!</div>
+        <div class="w-25 card mt-5 mx-5 text-white">Hello!!</div>
 
-        <div class="aboutUs col-10 mx-auto col-md-6 my-5 mt-0">
+        <div class=" w-50 aboutUs col-10 mx-5 col-md-6 my-5 mt-0 text-right">
           <div>About <span>Us</span> </div>
           <p>djdsahhdahdiusadferfqeerferr
             fefwefewqfrerddudaswefqfqdwed
             weqcehaduw eqyqwywqydhuwqeudh
             wewfcsadcfewqewdedsfafe</p>
-          <div class="text-right">
+          <div class="mt-5">
+            <!-- <RouterLink :to="{ name: 'about' }">
+                <p class="text-danger text-decoration-underline" style="text-align:right">see more</p>
+
+              </RouterLink> -->
+
             <RouterLink :to="{ name: 'about' }">
-              <p class="text-danger text-decoration-underline" style="text-align:right">see more</p>
+              <p class="mt-4 text-danger text-right text-decoration-underline">See more</p>
             </RouterLink>
           </div>
         </div>
@@ -58,11 +63,11 @@
             <div class=" btn btn-outline-secondary text-uppercase filter-btn m-2 justify-content-between d-flex"
               v-for="item in category" :key="item._id" @click="isAll = true">{{ item.name }}</div>
             <!-- <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" date-filter="cake" @click="index=0;isAll=false">cake</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cookie" @click="index=1;isAll=false">cookie</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cupcake" @click="index=2;isAll=false">cupCake</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="donut" @click="index=3;isAll=false">donut</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink" @click="index=4;isAll=false">drink</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="gummy" @click="index=5;isAll=false">gummy</a> -->
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cookie" @click="index=1;isAll=false">cookie</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cupcake" @click="index=2;isAll=false">cupCake</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="donut" @click="index=3;isAll=false">donut</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink" @click="index=4;isAll=false">drink</a>
+            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="gummy" @click="index=5;isAll=false">gummy</a> -->
           </div>
         </div>
 
@@ -113,7 +118,7 @@
     </section>
   </div>
 </template>
-    
+
 <script setup>
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
@@ -134,14 +139,13 @@ fetch("http://localhost:8000/api/category")
   })
 
 </script>
-    
+
 <style lang="scss" scoped>
 * {
   box-sizing: border-box;
 }
 
 .aa {
-  // background-image: url(../assets/Img/background.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -151,7 +155,7 @@ fetch("http://localhost:8000/api/category")
 
 .aboutUs {
   font-family: "Papyrus";
-  font-size: 48px;
+  font-size: 36px;
 
   span {
     color: red;
@@ -227,10 +231,10 @@ svg {
 
 .card {
   position: relative;
-  width: 480px;
+  width: 460px;
   height: 420px;
-  background-image: url(../assets/Img/cake03.jpg);
-  // background: rgb(103, 238, 234);
+  // background: url(../assets/Img/cake03.jpg);
+  background: rgb(103, 238, 234);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -280,79 +284,61 @@ svg {
   content: "Welcome to Our Shop!!";
 }
 
-// .flip-card {
-//   background-color: transparent;
-//   width: 190px;
-//   height: 254px;
-//   perspective: 1000px;
-//   font-family: sans-serif;
-// }
+.flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif;
+}
 
-// .title {
-//   font-size: 1.5em;
-//   font-weight: 900;
-//   text-align: center;
-//   margin: 0;
-// }
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
 
-// .flip-card-inner {
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   text-align: center;
-//   transition: transform 0.8s;
-//   transform-style: preserve-3d;
-// }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
 
-// .flip-card:hover .flip-card-inner {
-//   transform: rotateY(180deg);
-// }
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
 
-// .flip-card-front,
-// .flip-card-back {
-//   box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
-//   position: absolute;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   width: 100%;
-//   height: 100%;
-//   -webkit-backface-visibility: hidden;
-//   backface-visibility: hidden;
-//   border: 1px solid coral;
-//   border-radius: 1rem;
-// }
+.flip-card-front,
+.flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid coral;
+  border-radius: 1rem;
+}
 
-// .flip-card-front {
-//   background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
-//       rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
-//   color: coral;
-// }
+.flip-card-front {
+  background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
+      rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
+  color: coral;
+}
 
-// .flip-card-back {
-//   background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
-//       bisque 40%, rgb(255, 185, 160) 78%);
-//   color: white;
-//   transform: rotateY(180deg);
-// }
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
+      bisque 40%, rgb(255, 185, 160) 78%);
+  color: white;
+  transform: rotateY(180deg);
+}
 </style>
-    
-    
-    <!-- $(document).ready(function () {
-      $('.type').click(function () {
-        const value = $(this).attr('data-filter');
-    
-        if (value == 'all') {
-          $('.itemBox').show('1000');
-        } else {
-          $('.itemBox').not('.' + value).hide('1000');
-          $('.itemBox').filter('.' + value).show('1000');
-        }
-      })
-    
-      $('.type').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-      })
-    }) -->
-    
-    
+
+

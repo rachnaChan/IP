@@ -35,15 +35,16 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style lang="scss" scoped>
-*{
-  box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
+
 nav {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, aliceblue , rgb(234, 206, 211),  aliceblue,  rgb(234, 206, 211),aliceblue );
+    background: linear-gradient(to right, aliceblue, rgb(234, 206, 211), aliceblue, rgb(234, 206, 211), aliceblue);
     padding: 1rem 2rem;
     height: 100px;
 

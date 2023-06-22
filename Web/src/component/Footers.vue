@@ -4,7 +4,9 @@
             <div class="w-75 m-auto">
                 <div class="section1 d-flex">
                     <img src="../assets/Img/a.png" alt="logo">
-                    <RouterLink :to="{ name: 'menu' }"> <p class="mt-4">Menu's Info</p> </RouterLink>
+                    <RouterLink :to="{ name: 'menu' }">
+                        <p class="mt-4">Menu's Info</p>
+                    </RouterLink>
 
                     <!-- <p class=" mt-4 mx-3 font text-decoration-underline ">Food's Info <span> | </span> Drink's Info</p> -->
                     <!-- <p class=" mt-4 mx-3 font text-decoration-underline ">Store's Info </p> -->
@@ -55,8 +57,8 @@
                     </div>
                 </div> -->
                 <div class="input-group">
-                    <input type="email" class="input" id="Email" name="Email" placeholder="abc@gmail.com"
-                        autocomplete="off" required autofocus="autofocus">
+                    <input type="email" class="input" id="Email" name="Email" placeholder="abc@gmail.com" autocomplete="off"
+                        required autofocus="autofocus">
                     <input class="button--submit" value="Subscribe" type="submit">
                 </div>
             </div>
@@ -80,7 +82,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, aliceblue , rgb(234, 206, 211),  aliceblue,  rgb(234, 206, 211),aliceblue );
+    background: linear-gradient(to right, aliceblue, rgb(234, 206, 211), aliceblue, rgb(234, 206, 211), aliceblue);
     padding: 1rem 2rem;
     height: 120px;
 

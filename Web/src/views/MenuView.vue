@@ -1,163 +1,313 @@
 <template>
- 
- <section class=" py-5">
-      <div class="container">
+    <section class=" py-5">
+        <div class="container">
 
-        <div class="row">
-          <div class="col-10 mx-auto col-sm-6 text-center menu text-decoration-underline">
-            <p>Menu</p>
-          </div>
-        </div>
-
-        <div class="row d-flex justify-content-between">
-          <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 flex-wrap text-dark">
-            <div class=" btn btn-outline-secondary text-uppercase filter-btn m-2 justify-content-between d-flex"
-              v-for="item in category" :key="item._id" @click="isAll = true">{{ item.name }}</div>
-            <!-- <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" date-filter="cake" @click="index=0;isAll=false">cake</a>
-            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cookie" @click="index=1;isAll=false">cookie</a>
-            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cupcake" @click="index=2;isAll=false">cupCake</a>
-            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="donut" @click="index=3;isAll=false">donut</a>
-            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink" @click="index=4;isAll=false">drink</a>
-            <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="gummy" @click="index=5;isAll=false">gummy</a> -->
-          </div>
-        </div>
-
-        <div class="row">
-
-          <div class="col-10 mx-auto col-md-6">
-            <form>
-              <div class="input-group mb-3 justify-content-center">
-                <div class="input-group-prepend mx-3 mt-1">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-                    viewBox="0 0 16 16">
-                    <path
-                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                  </svg>
-                  <!-- <span class="input-group-text "><i class="fas fa-search"></i></span> -->
+            <div class="row">
+                <div class="col-10 mx-auto col-sm-6 text-center menu text-decoration-underline">
+                    <p>Menu</p>
                 </div>
-                <input type="text" class="form-control" id="item" placeholder='item ...'>
-              </div>
-
-            </form>
-          </div>
-        </div>
-
-        <div class="row align-items-center w-90 m-auto justify-content-between">
-
-          <div class="itemBox col-sm-3 mx-1 my-3  c0 c2 " v-for="item in data" :key="item._id">
-            <div class=" mt-3">
-              <div class="img-container">
-                <img :src="`http://localhost:8000/api/product/static/${item.imagePath}`" class=" img-fluid store-img"
-                  alt="">
-              </div>
-              <div>
-                <div class=" d-flex justify-content-between text-capitalize">
-                  <!-- {{ data from mongoosdb}} -->
-                  <h5>{{ item.name }} </h5>
-                  <h5><strong>{{ item.price }}</strong>$</h5>
-                </div>
-              </div>
             </div>
 
-          </div>
+            <div class="row">
+                <div class="btn col-lg-8 mx-auto d-flex justify-content-around my-2 flex-wrap text-dark">
 
+                    <RouterLink :to="{ name: 'menu' }"><a
+                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">all</a></RouterLink>
+                    <RouterLink :to="{ name: 'cakes' }"><a
+                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">cake</a></RouterLink>
+                    <RouterLink :to="{ name: 'cookies' }"><a
+                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">cookie</a></RouterLink>
+                    <RouterLink :to="{ name: 'cupcakes' }"><a
+                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">cupcake</a></RouterLink>
+                    <RouterLink :to="{ name: 'donuts' }"><a
+                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">donut</a></RouterLink>
+                    <RouterLink :to="{ name: 'drinks' }"><a
+                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">drink</a></RouterLink>
+                    <RouterLink :to="{ name: 'gummies' }"><a
+                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">gummy</a></RouterLink>
+
+
+                </div>
+            </div>
+
+            <div class="search m-auto w-75 justify-content-center">
+
+                <form class="w-100 m-auto justify-content-center d-flex">
+                    <div>
+                        <i class="bx bxs-search-alt-2 mt-3 mx-4"></i>
+                    </div>
+
+                    <div>
+                        <input type="text" id="find" placeholder="Find Your Cup of Tea..." onkeyup="search()">
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="row produclist align-items-center w-90">
+
+                <div class="col-sm-3 mx-1 my-3 store-item c0 c1 ">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/cake01.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Cake-01</h5>
+                                <h5><strong>15.99</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class=" col-sm-3 mx-auto my-3 store-item c0 c2">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/cookie01.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Cookie-01</h5>
+                                <h5><strong>3.5</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/cupcake01.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>CupCake-01</h5>
+                                <h5><strong>2.2</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/donut01.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Donut-01</h5>
+                                <h5><strong>1.5</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-1 my-3 store-item c0 c2">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/drink01.jpeg" class=" img-fluid store-img" alt="">
+
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Drink-01</h5>
+                                <h5><strong>4.2</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/gummy01.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Gummy-01</h5>
+                                <h5><strong>0.99</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/cake02.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Cake-02</h5>
+                                <h5><strong>22</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/cookie02.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Cookie-02</h5>
+                                <h5><strong>15.99</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-1 my-3 store-item c0 c1">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/cupcake02.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>CupCake-02</h5>
+                                <h5><strong>1.87</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/donut02.jpeg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Donut-02</h5>
+                                <h5><strong>2.1</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/drink02.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Drink-02</h5>
+                                <h5><strong>3.99</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
+                    <div class="product mt-3">
+                        <div class="img-container">
+                            <img src="../assets/Img/gummy02.jpg" class=" img-fluid store-img" alt="">
+                        </div>
+                        <div>
+                            <div class=" d-flex justify-content-between text-capitalize">
+                                <h5>Gummy-01</h5>
+                                <h5><strong>2.5</strong>$</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
-
-
-      </div>
     </section>
-
 </template>
-  
+
 <script setup>
-
 import { RouterLink } from 'vue-router'
-import { ref } from 'vue'
-const index = ref(0)
-const data = ref()
-const category = ref()
-
-fetch("http://localhost:8000/api/product")
-  .then(res => res.json())
-  .then(d => {
-    data.value = d
-  })
-
-fetch("http://localhost:8000/api/category")
-  .then(res => res.json())
-  .then(c => {
-    category.value = c
-  })
-
-
 </script>
   
 <style lang="scss" scoped>
+.aa {
+    // background-image: url(../assets/Img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    z-index: -99;
+}
+
+.aboutUs {
+    font-family: "Papyrus";
+    font-size: 48px;
+
+    span {
+        color: red;
+    }
+}
+
 .menu {
-  font-family: 'Dokdo';
-  font-size: 5rem;
+    font-family: 'Dokdo';
+    font-size: 5rem;
 }
 
 svg {
-  width: 35px;
-  height: 35px;
+    width: 35px;
+    height: 35px;
 }
 
 .about-img__container {
-  position: relative;
+    position: relative;
 }
 
 .about-img__container::before {
-  content: "";
-  position: absolute;
-  top: -2rem;
-  left: -1.5rem;
-  width: 100%;
-  height: 100%;
-  outline: 0.5rem outset pink;
-  z-index: -1;
-  transition: all 1s ease-in-out;
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: -1.5rem;
+    width: 100%;
+    height: 100%;
+    outline: 0.5rem outset pink;
+    z-index: -1;
+    transition: all 1s ease-in-out;
 }
 
 .about-img__container:hover:before {
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 }
 
 .img-container {
-  width: 90%;
-  height: 170px;
-  margin: auto;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+    width: 90%;
+    height: 170px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .store-img {
-  transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
 }
 
 .img-container:hover .store-img {
-  transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 .img-container:hover .store-item-icon {
-  transform: translate(0, 0);
+    transform: translate(0, 0);
 }
 
 .c0 {
-  font-family: 'Papyrus';
-  width: 20%;
-  height: 220px;
+    font-family: 'Papyrus';
+    width: 20%;
+    height: 220px;
 }
 
 .c1 {
-  background-color: #C9E0E7;
+    background-color: #C9E0E7;
 
 }
 
 .c2 {
-  background-color: #f1e8e8;
-}
-</style>
+    background-color: #F5CECE;
+}</style>

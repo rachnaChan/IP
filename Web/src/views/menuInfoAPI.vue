@@ -4,26 +4,26 @@
     <section class="about py-5">
       <div class="container m-auto justify-content-between d-flex">
         <!-- <div class="col-10 col-md-6 align-self-center my-5">
+              <div>
                 <div>
-                  <div>
-                    <img src="../assets/Img/cake04.jpg" class="img-fluid" alt="">
-                  </div>
-    
+                  <img src="../assets/Img/cake04.jpg" class="img-fluid" alt="">
                 </div>
-              </div> -->
+  
+              </div>
+            </div> -->
 
         <!-- <div class="flip-card">
-                <div class="flip-card-inner">
-                  <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                  </div>
-                  <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
-                  </div>
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <p class="title">FLIP CARD</p>
+                  <p>Hover Me</p>
                 </div>
-              </div> -->
+                <div class="flip-card-back">
+                  <p class="title">BACK</p>
+                  <p>Leave Me</p>
+                </div>
+              </div>
+            </div> -->
 
         <div class="card mt-5 img-fluid">Hello!!</div>
 
@@ -58,11 +58,11 @@
             <div class=" btn btn-outline-secondary text-uppercase filter-btn m-2 justify-content-between d-flex"
               v-for="item in category" :key="item._id" @click="isAll = true">{{ item.name }}</div>
             <!-- <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" date-filter="cake" @click="index=0;isAll=false">cake</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cookie" @click="index=1;isAll=false">cookie</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cupcake" @click="index=2;isAll=false">cupCake</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="donut" @click="index=3;isAll=false">donut</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink" @click="index=4;isAll=false">drink</a>
-                <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="gummy" @click="index=5;isAll=false">gummy</a> -->
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cookie" @click="index=1;isAll=false">cookie</a>
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cupcake" @click="index=2;isAll=false">cupCake</a>
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="donut" @click="index=3;isAll=false">donut</a>
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink" @click="index=4;isAll=false">drink</a>
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="gummy" @click="index=5;isAll=false">gummy</a> -->
           </div>
         </div>
 
@@ -113,7 +113,7 @@
     </section>
   </div>
 </template>
-    
+  
 <script setup>
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue'
@@ -134,7 +134,7 @@ fetch("http://localhost:8000/api/category")
   })
 
 </script>
-    
+  
 <style lang="scss" scoped>
 * {
   box-sizing: border-box;
@@ -336,23 +336,23 @@ svg {
 //   transform: rotateY(180deg);
 // }
 </style>
-    
-    
-    <!-- $(document).ready(function () {
-      $('.type').click(function () {
-        const value = $(this).attr('data-filter');
-    
-        if (value == 'all') {
-          $('.itemBox').show('1000');
-        } else {
-          $('.itemBox').not('.' + value).hide('1000');
-          $('.itemBox').filter('.' + value).show('1000');
-        }
-      })
-    
-      $('.type').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-      })
-    }) -->
-    
-    
+  
+  
+  <!-- $(document).ready(function () {
+    $('.type').click(function () {
+      const value = $(this).attr('data-filter');
+  
+      if (value == 'all') {
+        $('.itemBox').show('1000');
+      } else {
+        $('.itemBox').not('.' + value).hide('1000');
+        $('.itemBox').filter('.' + value).show('1000');
+      }
+    })
+  
+    $('.type').click(function () {
+      $(this).addClass('active').siblings().removeClass('active');
+    })
+  }) -->
+  
+  
