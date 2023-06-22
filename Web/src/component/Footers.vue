@@ -1,10 +1,13 @@
 <template>
     <nav>
         <main>
-            <div>
+            <div class="w-75 m-auto">
                 <div class="section1 d-flex">
                     <img src="../assets/Img/a.png" alt="logo">
-                    <p class=" mt-4 mx-3 font text-decoration-underline ">Food's Info <span> | </span> Drink's Info</p>
+                    <RouterLink :to="{ name: 'menu' }"> <p class="mt-4">Menu's Info</p> </RouterLink>
+
+                    <!-- <p class=" mt-4 mx-3 font text-decoration-underline ">Food's Info <span> | </span> Drink's Info</p> -->
+                    <!-- <p class=" mt-4 mx-3 font text-decoration-underline ">Store's Info </p> -->
                 </div>
 
                 <div class="d-flex">
@@ -38,17 +41,23 @@
 
             </div>
 
-            <div class="fonts">
-                <div>
+            <div class=" w-25 m-auto">
+                <div class="fonts">
                     <p>Stay in Touch!! Join our Newletter</p>
                 </div>
-                <div class="d-flex">
+                <!-- <div class="d-flex">
                     <div class="footEmail">
                         <input type="email" placeholder="Enter an email ..." class="mt-2">
                     </div>
                     <div class=" subscribe">
-                        <button type="submit" style="border:none; height:45px; width:100px; background-color: rgb(137, 127, 127); color:white;">Subscribe</button>
+                        <button type="submit"
+                            style="border:none; height:45px; width:100px; background-color: rgb(137, 127, 127); color:white;">Subscribe</button>
                     </div>
+                </div> -->
+                <div class="input-group">
+                    <input type="email" class="input" id="Email" name="Email" placeholder="abc@gmail.com"
+                        autocomplete="off" required autofocus="autofocus">
+                    <input class="button--submit" value="Subscribe" type="submit">
                 </div>
             </div>
 
@@ -62,15 +71,16 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style lang="scss" scoped>
-*{
-  box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
+
 nav {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #DEEBEF;
+    background: linear-gradient(to right, aliceblue , rgb(234, 206, 211),  aliceblue,  rgb(234, 206, 211),aliceblue );
     padding: 1rem 2rem;
     height: 120px;
 
@@ -92,6 +102,17 @@ nav {
             span {
                 color: rgb(125, 170, 222);
             }
+
+            a {
+                margin-left: 20px;
+                color: black;
+                text-decoration: underline;
+
+                &.router-link-exact-active {
+                    color: rgb(117, 117, 118);
+                    text-decoration: underline;
+                }
+            }
         }
 
         svg {
@@ -99,21 +120,59 @@ nav {
             height: 25px;
             margin-left: 5px;
         }
-        .fonts{
-            width: 25%;
+
+        .fonts {
             font-family: "Dokdo";
             font-size: 1.3rem;
         }
-        .footEmail{
-            height: 45px;
-            background-color: rgb(172, 164, 164);
+
+        // .footEmail{
+        //     height: 45px;
+        //     background-color: rgb(202, 197, 197);
+        // }
+        //
+        //    .subscribe{
+        //     width: 70px;
+        //     height: 45px;
+        // } 
+        .input-group {
+            display: flex;
+            align-items: center;
         }
 
-       .subscribe{
-        width: 70px;
-        height: 45px;
-    } 
-    }   
-    
+        .input {
+            min-height: 50px;
+            max-width: 150px;
+            padding: 0 1rem;
+            color: #fff;
+            font-size: 15px;
+            border: 1px solid #37cb90;
+            border-radius: 6px 0 0 6px;
+            background-color: transparent;
+        }
+
+        .button--submit {
+            min-height: 50px;
+            padding: .5em 1em;
+            border: none;
+            border-radius: 0 6px 6px 0;
+            background-color: #37cb90;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color .3s ease-in-out;
+        }
+
+        .button--submit:hover {
+            background-color: #d8e7ee;
+        }
+
+        .input:focus,
+        .input:focus-visible {
+            border-color: #858585;
+            outline: none;
+        }
+
+    }
+
 }
 </style>

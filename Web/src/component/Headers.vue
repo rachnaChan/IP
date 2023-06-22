@@ -10,13 +10,13 @@
                 <RouterLink :to="{ name: 'menu' }">Menu</RouterLink>
             </div>
             <div class="section3">
-                <div class="search">
+                <!-- <div class="search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                         viewBox="0 0 16 16">
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
-                </div>
+                </div> -->
                 <div class="cart">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3"
                         viewBox="0 0 16 16">
@@ -43,7 +43,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #DEEBEF;
+    background: linear-gradient(to right, aliceblue , rgb(234, 206, 211),  aliceblue,  rgb(234, 206, 211),aliceblue );
     padding: 1rem 2rem;
     height: 100px;
 
@@ -56,13 +56,14 @@ nav {
         .section1 {
             img {
                 width: 4.5rem;
+                background: transparent;
             }
         }
 
         .section2 {
             display: flex;
             gap: 1rem;
-            font-family: 'Freehand', cursive;
+            font-family: 'Dosis';
             font-size: 64px;
 
             a {
@@ -71,7 +72,7 @@ nav {
                 color: black;
 
                 &.router-link-exact-active {
-                    color: #C98EC6;
+                    color: rgb(117, 117, 118);
                     text-decoration: underline;
                 }
             }
