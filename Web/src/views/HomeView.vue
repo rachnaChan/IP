@@ -6,10 +6,10 @@
 
                 <div class="row justify-content-between">
 
-                    <div class="col-10 col-md-6 align-self-center my-5">
-                        <div>
-                            <div class="about-img__container">
-                                <img src="../assets/Img/cake04.jpg" class="img-fluid" alt="">
+                    <div class="col-10 col-md-5 align-self-center my-5 store-item">
+                        <div class="about-img__container">
+                            <div class="img-container" style="height: 300px;" >
+                                <img src="../assets/Img/cake03.jpg" class="img-fluid store-img" alt="">
                             </div>
 
                         </div>
@@ -33,7 +33,7 @@
             </div>
         </section>
 
-        <section class=" py-5">
+        <section class=" py-2">
             <div class="container">
 
                 <div class="row">
