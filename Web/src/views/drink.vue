@@ -99,7 +99,7 @@
 
 
 
-                    <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
+                    <!-- <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
                         <div class="product mt-3">
                             <div class="img-container">
                                 <img src="../assets/Img/drink02.jpg" class=" img-fluid store-img" alt="">
@@ -111,7 +111,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
 

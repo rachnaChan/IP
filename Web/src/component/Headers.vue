@@ -5,18 +5,18 @@
                 <img src="../assets/Img/a.png" alt="logo">
             </div>
             <div class="section2">
-                <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+                <RouterLink :to="{ name: 'home' }"> Home</RouterLink>
                 <RouterLink :to="{ name: 'about' }">About</RouterLink>
                 <RouterLink :to="{ name: 'menu' }">Menu</RouterLink>
             </div>
             <div class="section3">
-                <!-- <div class="search">
+                <div class="search">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                         viewBox="0 0 16 16">
                         <path
                             d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
-                </div> -->
+                </div>
                 <div class="cart">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3"
                         viewBox="0 0 16 16">
@@ -44,7 +44,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, aliceblue, rgb(234, 206, 211), aliceblue, rgb(234, 206, 211), aliceblue);
+    background-color: #d8e2dc;
+    // background: linear-gradient(to right, aliceblue, rgb(234, 206, 211), aliceblue, rgb(234, 206, 211), aliceblue);
     padding: 1rem 2rem;
     height: 100px;
 
@@ -73,7 +74,7 @@ nav {
                 color: black;
 
                 &.router-link-exact-active {
-                    color: rgb(117, 117, 118);
+                    color: rgb(153, 134, 106);
                     text-decoration: underline;
                 }
             }

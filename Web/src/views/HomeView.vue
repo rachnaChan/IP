@@ -7,8 +7,8 @@
                 <div class="row justify-content-between">
 
                     <div class="col-10 col-md-5 align-self-center my-5 store-item">
-                        <div class="about-img__container">
-                            <div class="img-container" style="height: 300px;" >
+                        <div>
+                            <div class="img-container" style="height: 300px; width: 500px;" >
                                 <img src="../assets/Img/cake03.jpg" class="img-fluid store-img" alt="">
                             </div>
 
@@ -167,7 +167,7 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
+                    <!-- <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
                         <div class="product mt-3">
                             <div class="img-container">
                                 <img src="../assets/Img/cake02.jpg" class=" img-fluid store-img" alt="">
@@ -249,7 +249,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -361,10 +361,10 @@ svg {
 }
 
 .c1 {
-    background-color: #C9E0E7;
+    background-color: #cce3de;
 
 }
 
 .c2 {
-    background-color: #F5CECE;
+    background-color:#c0ccd2 ;
 }</style>

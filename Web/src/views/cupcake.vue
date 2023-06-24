@@ -99,7 +99,7 @@
 
 
 
-
+<!-- 
                     <div class="col-sm-3 mx-1 my-3 store-item c0 c1">
                         <div class="product mt-3">
                             <div class="img-container">
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
 
