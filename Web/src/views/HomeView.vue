@@ -1,7 +1,14 @@
 
 <template>
     <div class="mt-5 aa">
-        <section class="about py-5" style="background-color: rgb(139, 138, 135);">
+        <!-- <div class="section2 h-100 bg-info">
+
+            <RouterLink :to="{ name: 'home' }"> Home</RouterLink>
+            <RouterLink :to="{ name: 'about' }">About</RouterLink>
+            <RouterLink :to="{ name: 'menu' }">Shop</RouterLink>
+        </div> -->
+
+        <section class="about py-5" style="background-color: aliceblue;">
 
             <div class="row justify-content-between m-auto">
 
@@ -39,7 +46,7 @@
 
         </section>
 
-        <section class=" py-1">
+        <section class="py-1" style="background-color: aliceblue;">
             <div>
 
                 <div class="row">

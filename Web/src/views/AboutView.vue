@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mt-5 m-auto w-75">
-      <h1 class=" text-info fonts text-center">Welcome to <span class="text-muted">Zmffhfltm91's</span> Store!!</h1>
+      <h1 class=" text-info fonts text-center">Welcome to <span class="text-muted text-uppercase">Chloris's</span> Store!!</h1>
     </div>
 
 
@@ -41,7 +41,7 @@
 
           </div>
           <div class="text-center mt-3">
-            <p>cake</p>
+            <p>Cake</p>
             <p>portion: 3-4 persons</p>
           </div>
 
@@ -54,7 +54,7 @@
 
           </div>
           <div class="text-center mt-3">
-            <p>donut</p>
+            <p>Donut</p>
             <p>portion: 2 persons</p>
           </div>
 
@@ -67,7 +67,7 @@
 
           </div>
           <div class="text-center mt-3">
-            <p>cake</p>
+            <p>Cupcake</p>
             <p>portion: 1 person</p>
           </div>
 
@@ -154,12 +154,12 @@ fetch("http://localhost:8000/api/user/me")
 }
 
 .fonts {
-  font-family: "Dokdo";
+  font-family: "Dosis";
   font-size: 2.8rem;
 }
 
 .textInfo {
-  font-family: 'papyrus';
+  font-family: 'Dosis';
   font-size: 1.5rem;
 }
 
