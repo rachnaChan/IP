@@ -5,7 +5,8 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'rachnaChan.github.io',
+
+  // base: 'rachnaChan.github.io',
   plugins: [vue()],
   resolve: {
     alias: {
