@@ -1,9 +1,9 @@
 <template>
   <div>
+
     <div class="mt-5 m-auto w-75">
       <h1 class=" text-info fonts text-center">Welcome to <span class="text-muted text-uppercase">Chloris's</span> Store!!</h1>
     </div>
-
 
     <div class="m-auto rounded-bottom  mt-3 fonts" style="background-color: pink; width: 300px; height: 30px;">
       <h5 class="fs-5 text-center mt-4">Simple and Tasty Receipe</h5>
@@ -16,7 +16,9 @@
         efwqeedfqefqeqfeebhcadadefwqeedfqefqeqfadsdewfc
         eebhcadad</p>
     </div>
+
     <div class="w-25 m-auto d-flex">
+
       <div class="w-25 ">
         <img src="../assets/Img/profile.png" alt="" class="imageProfile">
       </div>
@@ -27,7 +29,6 @@
       <!-- <div class="w-50" v-for="user in users" :key="user._id">
         <h5 class="fonts">By {{ user.username }}</h5>
       </div> -->
-
 
     </div>
 
@@ -40,6 +41,7 @@
             <img src="../assets/Img/cake02.jpg" alt="logo" class="mt-3 img-fluid store-img">
 
           </div>
+
           <div class="text-center mt-3">
             <p>Cake</p>
             <p>portion: 3-4 persons</p>
@@ -53,6 +55,7 @@
             <img src="../assets/Img/donut02.jpeg" alt="logo" class="mt-3 img-fluid store-img">
 
           </div>
+
           <div class="text-center mt-3">
             <p>Donut</p>
             <p>portion: 2 persons</p>
@@ -64,8 +67,8 @@
 
           <div class="img-container">
             <img src="../assets/Img/cupcake02.jpg" alt="logo" class="mt-3 img-fluid store-img">
-
           </div>
+
           <div class="text-center mt-3">
             <p>Cupcake</p>
             <p>portion: 1 person</p>
@@ -78,6 +81,7 @@
       <div class="w-75">
 
         <div class="my-5" style="margin-left: 40%;">
+
           <div class="w-75 m-auto">
             <p class="fonts text-danger" style="height: 50px;">Easy Sweets</p>
             <p class="textInfo">asdaiwjfajdcadsasd</p>
@@ -91,8 +95,11 @@
               efwqeedfqefqeqfeebhcadadefwqeedfqefqeqf
               eebhcadad</p>
           </div>
+
         </div>
+
         <div>
+
           <div class="w-75 m-auto my-5">
             <p class="fonts text-danger" style="height: 50px;">Affordable</p>
             <p class="textInfo">asdaiwjfajdcadsasdadd</p>
@@ -106,6 +113,7 @@
               efwqeedfqefqeqfeebhcadadefwqeedfqefqeqf
               eebhcadad</p>
           </div>
+
         </div>
 
         <!-- <div class="text-right">
@@ -128,7 +136,9 @@
         </div>
 
       </div>
+
     </div>
+    
   </div>
 </template>
 
@@ -144,7 +154,6 @@ fetch("http://localhost:8000/api/user/me")
   .then(a => {
     users.value = a
   })
-
 
 </script>
 
