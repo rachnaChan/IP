@@ -2,11 +2,13 @@
     <nav>
         <main>
             <div class="d-flex justify-content-between m-auto align-items-center">
+
                 <div class="section1">
                     <img src="../assets/Img/a.png" alt="logo">
                 </div>
 
                 <div class="section3">
+
                     <div class="d-flex">
                         <img src="../assets/Img/phone.png" alt="" class="mt-3">
                         <p class="mt-4 font-weight-bold ">Call Us (+855-92) 000 000</p>
@@ -39,11 +41,14 @@
                         <img src="../assets/Img/cart.png" alt="">
                         <p class=" font-weight-bold fs-1 mt-2">cart</p>
                     </div>
+
                 </div>
+
             </div>
             <hr class="border-top border-3 border-dark m-auto " style="width: 100%;">
 
             <div class="d-flex justify-content-between">
+
                 <div class="section2 mt-2">
 
                     <RouterLink :to="{ name: 'home' }"> Home</RouterLink>
@@ -57,14 +62,12 @@
                     <button class="learn-more mx-2"> Register
                     </button>
                 </div>
+
             </div>
-
-
         </main>
-
-
     </nav>
 </template>
+
 <script setup>
 import { RouterLink } from 'vue-router'
 </script>
@@ -76,10 +79,8 @@ import { RouterLink } from 'vue-router'
 
 nav {
     width: 100%;
-    // background: linear-gradient(to right, aliceblue, rgb(234, 206, 211), aliceblue, rgb(234, 206, 211), aliceblue);
     padding: 1rem 2rem;
     height: 160px;
-
 
     main {
         width: 100%;
@@ -96,7 +97,7 @@ nav {
         .section2 {
             display: flex;
             gap: 2.4rem;
-            font-family: 'Dosis';
+            font-family: inherit;
             font-size: 48px;
             margin-left: 10%;
 
@@ -130,7 +131,6 @@ nav {
             img {
                 width: 4rem;
                 height: 50px;
-
             }
 
             .cart {
@@ -182,7 +182,6 @@ nav {
                 transform: translateY(calc(-50% - 5px)) scale(1.1);
             }
         }
-
 
         button {
             position: relative;
@@ -254,5 +253,4 @@ nav {
             transform: translate3d(0, 0, -1em);
         }
     }
-}
-</style>
+}</style>

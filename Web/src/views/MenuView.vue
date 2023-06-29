@@ -25,12 +25,10 @@
                             class="type btn btn-outline-secondary text-uppercase filter-btn m-2">drink</a></RouterLink>
                     <RouterLink :to="{ name: 'gummies' }"><a
                             class="type btn btn-outline-secondary text-uppercase filter-btn m-2">gummy</a></RouterLink>
-
-
                 </div>
             </div>
 
-            <div class="search m-auto w-75 justify-content-center">
+            <!-- <div class="search m-auto w-75 justify-content-center">
 
                 <form class="w-100 m-auto justify-content-center d-flex">
                     <div>
@@ -42,177 +40,213 @@
                     </div>
                 </form>
 
-            </div>
+            </div> -->
 
             <div class="row produclist align-items-center w-90">
 
                 <div class="col-sm-3 mx-1 my-3 store-item c0 c1 ">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/cake01.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Cake-01</h5>
                                 <h5><strong>15.99</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
 
                 </div>
 
                 <div class=" col-sm-3 mx-auto my-3 store-item c0 c2">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/cookie01.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Cookie-01</h5>
                                 <h5><strong>3.5</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/cupcake01.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>CupCake-01</h5>
                                 <h5><strong>2.2</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/donut01.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Donut-01</h5>
                                 <h5><strong>1.5</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-1 my-3 store-item c0 c2">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/drink01.jpeg" class=" img-fluid store-img" alt="">
 
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Drink-01</h5>
                                 <h5><strong>4.2</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/gummy01.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Gummy-01</h5>
                                 <h5><strong>0.99</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/cake02.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Cake-02</h5>
                                 <h5><strong>22</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/cookie02.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Cookie-02</h5>
                                 <h5><strong>15.99</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-1 my-3 store-item c0 c1">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/cupcake02.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>CupCake-02</h5>
                                 <h5><strong>1.87</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/donut02.jpeg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Donut-02</h5>
                                 <h5><strong>2.1</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/drink02.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Drink-02</h5>
                                 <h5><strong>3.99</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
                 <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
                     <div class="product mt-3">
+
                         <div class="img-container">
                             <img src="../assets/Img/gummy02.jpg" class=" img-fluid store-img" alt="">
                         </div>
+
                         <div>
                             <div class=" d-flex justify-content-between text-capitalize">
                                 <h5>Gummy-01</h5>
                                 <h5><strong>2.5</strong>$</h5>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -228,7 +262,6 @@ import { RouterLink } from 'vue-router'
   
 <style lang="scss" scoped>
 .aa {
-    // background-image: url(../assets/Img/background.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -246,7 +279,7 @@ import { RouterLink } from 'vue-router'
 }
 
 .menu {
-    font-family: 'Dokdo';
+    font-family: inherit;
     font-size: 5rem;
 }
 

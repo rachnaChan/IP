@@ -154,12 +154,12 @@ fetch("http://localhost:8000/api/user/me")
 }
 
 .fonts {
-  font-family: "Dosis";
+  font-family: "papyrus";
   font-size: 2.8rem;
 }
 
 .textInfo {
-  font-family: 'Dosis';
+  font-family: inherit;
   font-size: 1.5rem;
 }
 

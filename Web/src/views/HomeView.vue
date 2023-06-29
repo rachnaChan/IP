@@ -1,27 +1,20 @@
 
 <template>
     <div class="mt-5 aa">
-        <!-- <div class="section2 h-100 bg-info">
-
-            <RouterLink :to="{ name: 'home' }"> Home</RouterLink>
-            <RouterLink :to="{ name: 'about' }">About</RouterLink>
-            <RouterLink :to="{ name: 'menu' }">Shop</RouterLink>
-        </div> -->
 
         <section class="about py-5" style="background-color: aliceblue;">
-
             <div class="row justify-content-between m-auto">
 
                 <div class="col-10 col-md-5 align-self-center my-5 store-item">
-
                     <div class="img-container rounded-5" style="height: 300px; width: 500px;">
                         <img src="../assets/Img/cake03.jpg" class=" img-fluid store-img" alt="">
                     </div>
-
                 </div>
 
                 <div class="aboutUs col-10 mx-auto col-md-6 my-5">
+
                     <div>About <span>Us</span> </div>
+
                     <p>djdsahhdahdiusadferfqeerferr
                         fefwefewqfrerddudaswefqfqdwed
                         weqcehaduw eqyqwywqydhuwqeudh
@@ -40,10 +33,10 @@
                             </button>
                         </RouterLink>
                     </div>
+
                 </div>
 
             </div>
-
         </section>
 
         <section class="py-1" style="background-color: aliceblue;">
@@ -56,17 +49,19 @@
                 </div>
 
                 <div class="row align-items-center w-90 justify-content-between m-auto">
-
                     <div class="card col-sm-4 mx-1 my-3 c0 c1">
+
                         <div class="card-img ">
                             <img src="../assets/Img/cake01.jpg" class=" img-fluid store-img" alt="">
-
                         </div>
+
                         <div class="mt-4">
                             <h5 class=" text-center">Cake-01 </h5>
                             <h5>Product description and details</h5>
                         </div>
+
                         <div class="card-footer">
+
                             <span class="text-title">$99.49</span>
 
                             <div class="card-button">
@@ -82,19 +77,23 @@
                                     </path>
                                 </svg>
                             </div>
+
                         </div>
                     </div>
 
                     <div class="card col-sm-4 mx-1 my-3 c0 c1">
+
                         <div class="card-img ">
                             <img src="../assets/Img/cookie01.jpg" class=" img-fluid store-img" alt="">
-
                         </div>
+
                         <div class="mt-4">
                             <h5 class=" text-center">Cookie-01 </h5>
                             <h5>Product description and details</h5>
                         </div>
+
                         <div class="card-footer">
+
                             <span class="text-title">$99.49</span>
 
                             <div class="card-button">
@@ -110,19 +109,25 @@
                                     </path>
                                 </svg>
                             </div>
+
                         </div>
+
                     </div>
 
                     <div class="card col-sm-4 mx-1 my-3 c0 c1">
+
                         <div class="card-img ">
                             <img src="../assets/Img/cupcake01.jpg" class=" img-fluid store-img" alt="">
 
                         </div>
+
                         <div class="mt-4">
                             <h5 class=" text-center">Cupcake-01 </h5>
                             <h5>Product description and details</h5>
                         </div>
+
                         <div class="card-footer">
+
                             <span class="text-title">$99.49</span>
 
                             <div class="card-button">
@@ -138,19 +143,25 @@
                                     </path>
                                 </svg>
                             </div>
+
                         </div>
+
                     </div>
 
                     <div class="card col-sm-4 mx-1 my-3 c0 c1">
+
                         <div class="card-img ">
                             <img src="../assets/Img/donut01.jpg" class=" img-fluid store-img" alt="">
 
                         </div>
+
                         <div class="mt-4">
                             <h5 class=" text-center">Donut-01 </h5>
                             <h5>Product description and details</h5>
                         </div>
+
                         <div class="card-footer">
+
                             <span class="text-title">$99.49</span>
 
                             <div class="card-button">
@@ -166,19 +177,25 @@
                                     </path>
                                 </svg>
                             </div>
+
                         </div>
+
                     </div>
 
                     <div class="card col-sm-4 mx-1 my-3 c0 c1">
+
                         <div class="card-img ">
                             <img src="../assets/Img/drink01.jpeg" class=" img-fluid store-img" alt="">
 
                         </div>
+
                         <div class="mt-4">
                             <h5 class=" text-center">Drink-01 </h5>
                             <h5>Product description and details</h5>
                         </div>
+
                         <div class="card-footer">
+
                             <span class="text-title">$99.49</span>
 
                             <div class="card-button">
@@ -194,19 +211,25 @@
                                     </path>
                                 </svg>
                             </div>
+
                         </div>
+
                     </div>
 
                     <div class="card col-sm-4 mx-1 my-3 c0 c1">
+
                         <div class="card-img ">
                             <img src="../assets/Img/gummy01.jpg" class=" img-fluid store-img" alt="">
 
                         </div>
+
                         <div class="mt-4">
                             <h5 class=" text-center">Gummy-01 </h5>
                             <h5>Product description and details</h5>
                         </div>
+
                         <div class="card-footer">
+
                             <span class="text-title">$99.49</span>
 
                             <div class="card-button">
@@ -222,14 +245,16 @@
                                     </path>
                                 </svg>
                             </div>
-                        </div>
-                    </div>
 
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
         </section>
+
     </div>
 </template>
   
@@ -266,12 +291,8 @@ h5 {
     }
 }
 
-// .about{
-//     box-shadow: #ffcaa6;
-// }
-
 .menu {
-    font-family: 'Dokdo';
+    font-family: inherit;
     font-size: 4rem;
 }
 
@@ -388,7 +409,6 @@ svg {
     transform-origin: bottom left;
 }
 
-
 .card {
     width: 190px;
     height: 280px;
@@ -445,5 +465,4 @@ svg {
 .card-button:hover {
     border: 1px solid #ffcaa6;
     background-color: #ffcaa6;
-}
-</style>
+}</style>

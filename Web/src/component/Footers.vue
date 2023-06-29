@@ -1,37 +1,43 @@
 <template>
     <nav>
         <div class="w-100 d-flex m-auto justify-content-between">
-            <!-- style="background-color: rgb(139, 138, 135);" -->
 
             <div class="mt-4 w-25 justify-content-between d-flex mx-3">
+
                 <div class="mx-3">
+
                     <h4>Shop</h4>
 
                     <div class="d-flex">
+
                         <div>
                             <p>Cake</p>
                             <p>Cookies</p>
                             <p>Cupcakes</p>
                         </div>
+
                         <div class="mx-3">
                             <p>Donut</p>
                             <p>Drink</p>
                             <p>Gummy</p>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
 
                 <div>
-                    <h4>About</h4>
-                    <div class="section2">
 
-                        <RouterLink :to="{ name: 'about' }"><p>Our Store</p></RouterLink>
+                    <h4>About</h4>
+
+                    <div class="section2">
+                        <RouterLink :to="{ name: 'about' }">
+                            <p>Our Store</p>
+                        </RouterLink>
                     </div>
+
                 </div>
 
             </div>
-
 
             <div class="w-25">
 
@@ -41,8 +47,8 @@
                     <input class="button--submit" value="Subscribe" type="submit">
                 </div>
 
-
                 <div class="main m-auto mt-5 d-flex">
+
                     <div class="card">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="gmail">
                             <path fill="#d2919f"
@@ -52,6 +58,7 @@
                                 clip-rule="evenodd" />
                         </svg>
                     </div>
+
                     <div class="card">
                         <svg height="30px" width="30px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"
                             class="twitter">
@@ -79,14 +86,15 @@
 
                     <p class="text text-uppercase fs-6">hover for social</p>
                     <div class="main_back"></div>
+
                 </div>
+
             </div>
 
         </div>
-
-
     </nav>
 </template>
+
 <script setup>
 import { RouterLink } from 'vue-router'
 </script>
@@ -101,40 +109,34 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffe3e2;
-    // background: linear-gradient(to right, aliceblue, rgb(234, 206, 211), aliceblue, rgb(234, 206, 211), aliceblue);
+    background: linear-gradient(to right, aliceblue, #ffe3e2);
     padding: 1rem 2rem;
-    // height: 120px;
 
     p {
-        font-family: 'Dosis';
+        font-family: 'papyrus';
         font-size: 20px;
     }
 
-    h4{
+    h4 {
         font-family: inherit;
     }
-
     .section2 {
 
+        a {
+            font-size: 2rem;
+            text-decoration: none;
+            color: black;
 
-            a {
-                font-size: 2rem;
-                text-decoration: none;
-                color: black;
-
-                &.router-link-exact-active {
-                    color: gray;
-                    // text-decoration: underline;
-                }
+            &.router-link-exact-active {
+                color: gray;
+                // text-decoration: underline;
             }
         }
-
+    }
     .input-group {
         display: flex;
         align-items: center;
     }
-
     .input {
         min-height: 50px;
         max-width: 150px;
@@ -145,7 +147,6 @@ nav {
         border-radius: 6px 0 0 6px;
         background-color: transparent;
     }
-
     .button--submit {
         min-height: 50px;
         padding: .5em 1em;
@@ -157,21 +158,14 @@ nav {
         cursor: pointer;
         transition: background-color .3s ease-in-out;
     }
-
     .button--submit:hover {
         background-color: #2cac8c;
     }
-
     .input:focus,
     .input:focus-visible {
         border-color: #2cac8c;
         outline: none;
     }
-
-    // .fonts {
-    //     font-family: 'Dokdo';
-    // }
-
     .main_back {
         position: absolute;
         border-radius: 10px;
@@ -223,17 +217,11 @@ nav {
         fill: #03A9F4;
     }
 
-
-    // .card:nth-child(8) {
-    //     border-radius: 20px;
-    // }
-
     .card:nth-child(8) .telegram {
         opacity: 0;
         transition: .2s ease-in-out;
         fill: #29b6f6;
     }
-
 
     .main:hover {
         width: 8em;
@@ -251,20 +239,16 @@ nav {
         border: 1px solid rgba(255, 255, 255, 0.3);
         background: rgba(211, 243, 242, 0.2);
     }
-
     .main:hover .card:nth-child(5) {
         border: transparent;
     }
-
     .main:hover .text {
         opacity: 0;
         z-index: -3;
     }
-
     .main:hover .gmail {
         opacity: 1;
     }
-
     .main:hover .twitter {
         opacity: 1;
     }
@@ -272,23 +256,18 @@ nav {
     .main:hover .telegram {
         opacity: 1;
     }
-
     .card:nth-child(1):hover {
         background-color: #c5dfb6;
     }
-
     .card:nth-child(1):hover gmail {
         fill: rgb(29, 1, 1);
     }
-
     .card:nth-child(2):hover {
         background-color: #03A9F4;
     }
-
     .card:nth-child(2):hover .twitter {
         fill: white;
     }
-
     .text {
         position: absolute;
         font-size: 0.4em;
@@ -299,7 +278,5 @@ nav {
         letter-spacing: 0.1em;
         z-index: 3;
     }
-
-
 }
 </style>
