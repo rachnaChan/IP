@@ -1,0 +1,50 @@
+
+var Categories = {
+    async create({ name, desc, imageUrl }) {
+        const res = await fetch("http://localhost:3001/category/created", {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify({ name, desc, imageUrl }),
+        });
+
+        const result = await res.json();
+        return result;
+    },
+    async all() {
+        const res = await fetch("http://localhost:3001/category/all", {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Content-type": "application/json",
+                Origin: "http://localhost:3000",
+            },
+        });
+
+        const result = await res.json();
+        if (!result?.length) return [];
+
+        return result;
+    },
+
+    async getCategory(idCategory) {
+        const link = "http://localhost:3001/id/" + idCategory;
+        const res = await fetch(link, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                "Content-type": "application/json",
+                Origin: "http://localhost:3000",
+            },
+        });
+
+        const result = await res.json();
+        if (!result?.length) return [];
+
+        return result;
+    }
+}
+
+export default Categories
