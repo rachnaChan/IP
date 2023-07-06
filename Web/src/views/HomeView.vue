@@ -62,7 +62,7 @@
 
                         <div class="card-footer">
 
-                            <span class="text-title">$99.49</span>
+                            <span class="text-title">$15.99</span>
 
                             <div class="card-button">
                                 <svg class="svg-icon" viewBox="0 0 20 20">
@@ -94,7 +94,7 @@
 
                         <div class="card-footer">
 
-                            <span class="text-title">$99.49</span>
+                            <span class="text-title">$3.5</span>
 
                             <div class="card-button">
                                 <svg class="svg-icon" viewBox="0 0 20 20">
@@ -128,7 +128,7 @@
 
                         <div class="card-footer">
 
-                            <span class="text-title">$99.49</span>
+                            <span class="text-title">$2.2</span>
 
                             <div class="card-button">
                                 <svg class="svg-icon" viewBox="0 0 20 20">
@@ -162,7 +162,7 @@
 
                         <div class="card-footer">
 
-                            <span class="text-title">$99.49</span>
+                            <span class="text-title">$1.5</span>
 
                             <div class="card-button">
                                 <svg class="svg-icon" viewBox="0 0 20 20">
@@ -196,7 +196,7 @@
 
                         <div class="card-footer">
 
-                            <span class="text-title">$99.49</span>
+                            <span class="text-title">$4.2</span>
 
                             <div class="card-button">
                                 <svg class="svg-icon" viewBox="0 0 20 20">
@@ -230,7 +230,7 @@
 
                         <div class="card-footer">
 
-                            <span class="text-title">$99.49</span>
+                            <span class="text-title">$0.99</span>
 
                             <div class="card-button">
                                 <svg class="svg-icon" viewBox="0 0 20 20">

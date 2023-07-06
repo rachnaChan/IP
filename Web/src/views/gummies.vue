@@ -31,20 +31,6 @@
                 </div>
             </div>
 
-            <div class="search m-auto w-75 justify-content-center">
-
-                <form class="w-100 m-auto justify-content-center d-flex">
-                    <div>
-                        <i class="bx bxs-search-alt-2 mt-3 mx-4"></i>
-                    </div>
-
-                    <div>
-                        <input type="text" id="find" placeholder="Find Your Cup of Tea..." onkeyup="search()">
-                    </div>
-                </form>
-
-            </div>
-
             <div class="row produclist align-items-center w-90">
 
 

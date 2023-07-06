@@ -1,266 +1,110 @@
+
 <template>
-    <section class=" py-5">
-        <div class="container">
+    <div class="aa">
 
-            <div class="row">
-                <div class="col-10 mx-auto col-sm-6 text-center menu text-decoration-underline">
-                    <p>Menu</p>
-                </div>
-            </div>
+        <section class=" py-5">
+            <div class="container">
 
-            <div class="row">
-                <div class="btn col-lg-8 mx-auto d-flex justify-content-around my-2 flex-wrap text-dark">
-
-                    <RouterLink :to="{ name: 'menu' }"><a
-                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">all</a></RouterLink>
-                    <RouterLink :to="{ name: 'cakes' }"><a
-                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">cake</a></RouterLink>
-                    <RouterLink :to="{ name: 'cookies' }"><a
-                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">cookie</a></RouterLink>
-                    <RouterLink :to="{ name: 'cupcakes' }"><a
-                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">cupcake</a></RouterLink>
-                    <RouterLink :to="{ name: 'donuts' }"><a
-                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">donut</a></RouterLink>
-                    <RouterLink :to="{ name: 'drinks' }"><a
-                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">drink</a></RouterLink>
-                    <RouterLink :to="{ name: 'gummies' }"><a
-                            class="type btn btn-outline-secondary text-uppercase filter-btn m-2">gummy</a></RouterLink>
-                </div>
-            </div>
-
-            <!-- <div class="search m-auto w-75 justify-content-center">
-
-                <form class="w-100 m-auto justify-content-center d-flex">
-                    <div>
-                        <i class="bx bxs-search-alt-2 mt-3 mx-4"></i>
+                <div class="row">
+                    <div class="col-10 mx-auto col-sm-6 text-center menu ">
+                        <p>Menu</p>
                     </div>
+                </div>
 
-                    <div>
-                        <input type="text" id="find" placeholder="Find Your Cup of Tea..." onkeyup="search()">
+                <div class="row d-flex justify-content-between ">
+                    <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 flex-wrap text-dark">
+                        <div class=" btn btn-outline-secondary text-uppercase filter-btn m-2 justify-content-between d-flex"></div>
+                        <!-- <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" date-filter="cake" @click="index=0;isAll=false">cake</a>
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cookie" @click="index=1;isAll=false">cookie</a>
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="cupcake" @click="index=2;isAll=false">cupCake</a>
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="donut" @click="index=3;isAll=false">donut</a>
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="drink" @click="index=4;isAll=false">drink</a>
+              <a class="type btn btn-outline-secondary text-uppercase filter-btn m-2" data-filter="gummy" @click="index=5;isAll=false">gummy</a> -->
                     </div>
-                </form>
+                </div>
 
-            </div> -->
+                <div class="row">
 
-            <div class="row produclist align-items-center w-90">
+                    <div class="col-10 mx-auto col-md-6">
+                        <form>
+                            <div class="input-group mb-3 justify-content-center">
+                                <div class="input-group-prepend mx-3 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-search" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                    <!-- <span class="input-group-text "><i class="fas fa-search"></i></span> -->
+                                </div>
+                                <input type="text" class="form-control" id="item" placeholder='item ...'>
+                            </div>
 
-                <div class="col-sm-3 mx-1 my-3 store-item c0 c1 ">
-                    <div class="product mt-3">
+                        </form>
+                    </div>
+                </div>
 
-                        <div class="img-container">
-                            <img src="../assets/Img/cake01.jpg" class=" img-fluid store-img" alt="">
-                        </div>
+                <div class="row align-items-center w-90 m-auto justify-content-between">
 
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Cake-01</h5>
-                                <h5><strong>15.99</strong>$</h5>
+                    <div class="itemBox col-sm-3 mx-1 my-3  c0 c2 " v-for="product in products" v-bind:key="product.id">
+                        <div class=" mt-3">
+                            <div class="img-container">
+                                <img v-bind:src="product.imagePath" class=" img-fluid store-img" alt="">
+                            </div>
+                            <div>
+                                <div class=" d-flex justify-content-between text-capitalize">
+                                    <!-- {{ data from mongoosdb}} -->
+                                    <h5>{{ product.name }} </h5>
+                                    <h5><strong>{{ product.price }}</strong>$</h5>
+                                    <div class="card-button">
+                                        <router-link v-bind:to="'/products/' + 'product.id'">
+                                        <svg class="svg-icon" viewBox="0 0 20 20">
+                                            <path
+                                                d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z">
+                                            </path>
+                                            <path
+                                                d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z">
+                                            </path>
+                                            <path
+                                                d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z">
+                                            </path>
+                                        </svg>
+                                        </router-link>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                     </div>
 
+
                 </div>
 
-                <div class=" col-sm-3 mx-auto my-3 store-item c0 c2">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/cookie01.jpg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Cookie-01</h5>
-                                <h5><strong>3.5</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/cupcake01.jpg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>CupCake-01</h5>
-                                <h5><strong>2.2</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/donut01.jpg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Donut-01</h5>
-                                <h5><strong>1.5</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-1 my-3 store-item c0 c2">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/drink01.jpeg" class=" img-fluid store-img" alt="">
-
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Drink-01</h5>
-                                <h5><strong>4.2</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/gummy01.jpg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Gummy-01</h5>
-                                <h5><strong>0.99</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/cake02.jpg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Cake-02</h5>
-                                <h5><strong>22</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/cookie02.jpg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Cookie-02</h5>
-                                <h5><strong>15.99</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-1 my-3 store-item c0 c1">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/cupcake02.jpg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>CupCake-02</h5>
-                                <h5><strong>1.87</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/donut02.jpeg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Donut-02</h5>
-                                <h5><strong>2.1</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-auto my-3 store-item c0 c1">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/drink02.jpg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Drink-02</h5>
-                                <h5><strong>3.99</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-sm-3 mx-auto my-3 store-item c0 c2">
-                    <div class="product mt-3">
-
-                        <div class="img-container">
-                            <img src="../assets/Img/gummy02.jpg" class=" img-fluid store-img" alt="">
-                        </div>
-
-                        <div>
-                            <div class=" d-flex justify-content-between text-capitalize">
-                                <h5>Gummy-01</h5>
-                                <h5><strong>2.5</strong>$</h5>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
 
             </div>
-
-        </div>
-    </section>
+        </section>
+    </div>
 </template>
+  
+<script>
 
-<script setup>
-import { RouterLink } from 'vue-router'
+export default {
+    name: 'menu',
+    data() {
+        return {
+            products
+        }
+    }
+
+};
+import { products } from '../data';
+
 </script>
   
 <style lang="scss" scoped>
+* {
+    box-sizing: border-box;
+}
+
 .aa {
     background-repeat: no-repeat;
     background-position: center;
@@ -271,7 +115,7 @@ import { RouterLink } from 'vue-router'
 
 .aboutUs {
     font-family: "Papyrus";
-    font-size: 48px;
+    font-size: 36px;
 
     span {
         color: red;
@@ -279,7 +123,7 @@ import { RouterLink } from 'vue-router'
 }
 
 .menu {
-    font-family: inherit;
+    font-family: 'papyrus';
     font-size: 5rem;
 }
 
@@ -342,5 +186,140 @@ svg {
 }
 
 .c2 {
-    background-color: #F5CECE;
-}</style>
+    background-color: #d7d2d2;
+}
+
+.card {
+    position: relative;
+    width: 460px;
+    height: 420px;
+    // background: url(../assets/Img/cake03.jpg);
+    background: rgb(103, 238, 234);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 15px;
+    font-family: 'Dosis';
+    cursor: pointer;
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    content: "";
+    width: 20%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: rgb(163, 180, 185);
+    transition: all 0.5s;
+}
+
+.card::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 15px 0 100%;
+}
+
+.card::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100% 0 15px;
+}
+
+.card:hover::before,
+.card:hover:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+}
+
+.card:hover:after {
+    content: "Welcome to Our Shop!!";
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+    font-family: sans-serif;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid coral;
+    border-radius: 1rem;
+}
+
+.flip-card-front {
+    background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
+            rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
+    color: coral;
+}
+
+.flip-card-back {
+    background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
+            bisque 40%, rgb(255, 185, 160) 78%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-button {
+    border: 1px solid #252525;
+    display: flex;
+    padding: .3em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+}
+
+/*Hover*/
+.card-img:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+}
+
+.card-button:hover {
+    border: 1px solid #ffcaa6;
+    background-color: #ffcaa6;
+}
+</style>
+  
+  
+  
