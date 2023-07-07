@@ -38,7 +38,13 @@
 
                     <div class="cart d-flex align-items-center">
 
-                        <img src="../assets/Img/cart.png" alt="">
+                        <router-link v-bind:to="'/viewcartproduct'">
+                            <div>
+                           <img src="../assets/Img/cart.png" alt=""> 
+                        </div>
+                        </router-link>
+                        
+                        
                         <p class=" font-weight-bold fs-1 mt-2">cart</p>
                     </div>
 
@@ -70,6 +76,7 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { cartItems } from '../data';
 </script>
 
 <style lang="scss" scoped>

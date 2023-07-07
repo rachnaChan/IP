@@ -5,7 +5,7 @@
             style="margin-left: 10%; background-color: pink; width: 400px; height: 30px;">
             <h5 class="fs-5 text-center mt-4">Home > Product's Info > Product title</h5>
         </div>
-        <div class="mx-5 m-auto d-flex justiy-content-around">
+        <div class="mx-5 m-auto d-flex justiy-content-around" v-for="product in cartItems" :key="product.id">
             <div class=" mt-5 border border-dark w-50" style="margin-left: 10%; background-color: rgb(232, 226, 226);">
 
                 <div>
@@ -16,9 +16,7 @@
 
                 <hr>
 
-
                 <div class="w-75 mt-4 d-flex m-auto justify-content-between">
-
                     <div class="m-auto position-relative w-50">
                         <img v-bind:src="product.imagePath" class="img-fluid " />
                     </div>
@@ -26,7 +24,6 @@
                     <div class="m-auto position-relative w-50 mx-4">
                         <img v-bind:src="product.imagePath" class="img-fluid " />
                     </div>
-
                     <div class="m-auto position-relative w-50 py-5">
                         <img v-bind:src="product.imagePath" class="img-fluid " />
                     </div>
@@ -34,12 +31,47 @@
             </div>
 
             <div class="w-25 mt-5 mx-5">
-                <div class="d-flex m-auto justify-content-between">
-                    <h5>{{ product.name }}</h5>
-                    <h5 class="price">{{ product.price }}</h5>
+                <div class=" border border-dark" style="background: aliceblue;">
+
+                    <h5 class="mt-4 mx-3">Item Added to Cart</h5>
+
+                    <hr>
+
+                    <div class="d-flex mx-5 justify-content-around">
+                        <h5>{{ product.name }}</h5>
+                        <h5>size</h5>
+                    </div>
+
+                    <div class="d-flex mx-5 justify-content-around">
+                        <h5>quantity</h5>
+                        <h5>{{ product.price }}</h5>
+                    </div>
+
+                    <div class="d-flex justify-content-around m-auto mx-5 py-4">
+
+                        <router-link v-bind:to="'/cartproduct'">
+                            <div class="">
+                                <button class="border border-dark btn btn-secondary">
+                                    <h5 class="text-white">View Cart</h5>
+                                </button>
+                            </div>
+                        </router-link>
+
+                        <div class="">
+                            <button class="border border-dark btn btn-primary">
+                                <h5 class="text-white">Remove</h5>
+                            </button>
+                        </div>
+
+                    </div>
+
                 </div>
+
                 <hr>
-                <div>
+
+                <div id="blur"></div>
+
+                <div id="contented">
                     <div class="d-flex m-auto justify-content-between ">
                         <h5>Size</h5>
                         <h5 class="text-decoration-underline">Sizing Chart</h5>
@@ -78,14 +110,14 @@
 
                         <hr class="mt-3">
 
-                        <router-link v-bind:to="'/cartproduct'">
                         <div class="m-auto justify-centent-center text-center">
-                            <button style="background-color: pink;">
-                                <h5 class="mt-2 mx-4">Add To Cart</h5>
-                            </button>
+                            <router-link v-bind:to="'/cartproduct'">
+                                <button style="background-color: pink;">
+                                    <h5 class="mt-2 mx-4">Add To Cart</h5>
+                                </button>
+                            </router-link>
 
-                        </div></router-link>
-                        
+                        </div>
 
                         <hr class="mt-3">
 
@@ -93,49 +125,51 @@
                             <h5>{{ product.desc }}</h5>
                         </div>
                     </div>
-
                 </div>
+
+
+
             </div>
 
         </div>
         <hr class="mt-3 w-75 m-auto">
         <h5 class="mt-5 m-auto w-75 fw-bold fs-1">You might also like this</h5>
 
-        <div class="w-75 d-flex mt-4 py-5 justify-content-between m-auto">
+        <div class="w-75 m-auto d-flex mt-4 py-5 justify-content-around">
 
-            <div class="card col-sm-3 mx-1 my-3 c0 c1">
+            <div class="card col-sm-4 mx-1 my-3 c0 c1">
                 <div class="card-img ">
                     <img src="../assets/Img/cake01.jpg" class=" img-fluid store-img" alt="">
                 </div>
             </div>
 
-            <div class="card col-sm-6 mx-1 my-3 c0 c1">
+            <div class="card col-sm-4 mx-1 my-3 c0 c1">
                 <div class="card-img ">
                     <img src="../assets/Img/cookie01.jpg" class=" img-fluid store-img" alt="">
                 </div>
             </div>
 
-            <div class="card col-sm-6 mx-1 my-3 c0 c1">
+            <div class="card col-sm-4 mx-1 my-3 c0 c1">
                 <div class="card-img ">
                     <img src="../assets/Img/cupcake01.jpg" class=" img-fluid store-img" alt="">
                 </div>
             </div>
 
-            <div class="card col-sm-6 mx-1 my-3 c0 c1">
+            <div class="card col-sm-4 mx-1 my-3 c0 c1">
 
                 <div class="card-img ">
                     <img src="../assets/Img/donut01.jpg" class=" img-fluid store-img" alt="">
                 </div>
             </div>
 
-            <div class="card col-sm-6 mx-1 my-3 c0 c1">
+            <div class="card col-sm-4 mx-1 my-3 c0 c1">
 
                 <div class="card-img ">
                     <img src="../assets/Img/drink01.jpeg" class=" img-fluid store-img" alt="">
                 </div>
             </div>
-            
-            <div class="card col-sm-6 mx-1 my-3 c0 c1">
+
+            <div class="card col-sm-4 mx-1 my-3 c0 c1">
 
                 <div class="card-img ">
                     <img src="../assets/Img/gummy01.jpg" class=" img-fluid store-img" alt="">
@@ -148,14 +182,15 @@
   
 <script >
 
-import { products } from '../data';
+import { cartItems } from '../data';
 
 export default {
-    name: 'productdetail',
+    name: 'viewcartproduct',
+    props: ['product'],
     data() {
         return {
-            product: products.find((p) => p.id === this.$route.params.id),
-        };
+            cartItems,
+        }
     }
 
 };
@@ -228,7 +263,7 @@ h5 {
 .card {
     width: 190px;
     height: 180px;
-    padding: .7em;
+    padding: .8em;
     background: #f5f5f5;
     position: relative;
     overflow: visible;
@@ -281,6 +316,16 @@ svg {
 .card-button:hover {
     border: 1px solid #ffcaa6;
     background-color: #ffcaa6;
+}
+
+#contented {
+
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+#blur {
+    z-index: 2;
 }
 </style>
   

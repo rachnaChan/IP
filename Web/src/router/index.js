@@ -2,8 +2,9 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import MenuView from "../views/MenuView.vue";
-import cartPrduct from "../views/CartProduct.vue";
+import cartProduct from "../views/cartProduct.vue";
 import productDetail from "../views/productDetail.vue";
+import viewCartProduct from "../views/viewCartProduct.vue";
 
 
 const router = createRouter({
@@ -27,15 +28,21 @@ const router = createRouter({
     component: MenuView,
   },
   {
-    path: "/single-product/:id",
+    path: "/menu/:id",
     name: "productdetail",
     component: productDetail,
   },
   {
-    path: "/cart-product",
+    path: "/cartproduct",
     name: "cartproduct",
-    component: cartPrduct,
+    component: cartProduct,
   },
+  {
+    path: "/viewcartproduct",
+    name: "viewcartproduct",
+    component: viewCartProduct,
+  },
+
 ],
 
 });
