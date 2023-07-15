@@ -67,16 +67,16 @@ const router = createRouter({
     name: "checkoutpayment",
     component: checkoutpayment,
   },
-  // {
-  //   path: "/login",
-  //   name: "login",
-  //   component: login,
-  // },
-  // {
-  //   path: "/signup",
-  //   name: "signup",
-  //   component: signup,
-  // },
+  {
+    path: "/login",
+    name: "login",
+    component: login,
+  },
+  {
+    path: "/signup",
+    name: "signup",
+    component: signup,
+  },
 
 ],
 

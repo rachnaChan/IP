@@ -63,10 +63,20 @@
                 </div>
 
                 <div class="d-flex mt-3 ">
-                    <button class="learn-more"> Login
+                    <RouterLink :to="{ name: 'login' }">
+                        <button class="learn-more"> Login
                     </button>
-                    <button class="learn-more mx-2"> Register
+                    </RouterLink>
+                    <!-- <button class="learn-more"> Login
+                    </button> -->
+
+                    <RouterLink :to="{ name: 'signup' }">
+                        <button class="learn-more"> Register
                     </button>
+                    </RouterLink>
+
+                    <!-- <button class="learn-more mx-2"> Register
+                    </button> -->
                 </div>
 
             </div>
