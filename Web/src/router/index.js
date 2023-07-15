@@ -5,7 +5,12 @@ import MenuView from "../views/MenuView.vue";
 import cartProduct from "../views/cartProduct.vue";
 import productDetail from "../views/productDetail.vue";
 import viewCartProduct from "../views/viewCartProduct.vue";
-
+import productList from "../component/productList.vue";
+import paymentmethod from "../views/paymentMethod.vue";
+import login from "../views/login.vue";
+import signup from "../views/signup.vue";
+import checkoutshipping from "../views/checkoutShipping.vue"
+import checkoutpayment from "../views/checkoutPayment.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,6 +47,36 @@ const router = createRouter({
     name: "viewcartproduct",
     component: viewCartProduct,
   },
+  {
+    path: "/productlist",
+    name: "productlist",
+    component: productList,
+  },
+  {
+    path: "/paymentmethod",
+    name: "paymentmethod",
+    component: paymentmethod,
+  },
+  {
+    path: "/checkoutshipping",
+    name: "checkoutshipping",
+    component: checkoutshipping,
+  },
+  {
+    path: "/checkoutpayment",
+    name: "checkoutpayment",
+    component: checkoutpayment,
+  },
+  // {
+  //   path: "/login",
+  //   name: "login",
+  //   component: login,
+  // },
+  // {
+  //   path: "/signup",
+  //   name: "signup",
+  //   component: signup,
+  // },
 
 ],
 

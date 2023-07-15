@@ -51,7 +51,7 @@
 
                 <div class="d-flex justify-content-around m-auto mx-5 py-4">
 
-                    <router-link v-bind:to="'/cartproduct'">
+                    <router-link v-bind:to="'/paymentmethod'">
                         <div class="">
                             <button class="border border-dark btn btn-success">
                                 <h5 class="text-white">Checkout</h5>

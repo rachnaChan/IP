@@ -58,7 +58,8 @@
                         </router-link>
 
                         <div class="">
-                            <button class="border border-dark btn btn-primary">
+                            <button class="border border-dark btn btn-primary"
+                                v-on:click="$emit('remove-from-cart', product.id)">
                                 <h5 class="text-white">Remove</h5>
                             </button>
                         </div>

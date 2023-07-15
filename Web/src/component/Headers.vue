@@ -40,11 +40,11 @@
 
                         <router-link v-bind:to="'/viewcartproduct'">
                             <div>
-                           <img src="../assets/Img/cart.png" alt=""> 
-                        </div>
+                                <img src="../assets/Img/cart.png" alt="">
+                            </div>
                         </router-link>
-                        
-                        
+
+
                         <p class=" font-weight-bold fs-1 mt-2">cart</p>
                     </div>
 
@@ -260,4 +260,5 @@ nav {
             transform: translate3d(0, 0, -1em);
         }
     }
-}</style>
+}
+</style>
