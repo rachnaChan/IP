@@ -23,6 +23,7 @@ import img22 from "./assets/Img/gummy02.jpg";
 import img23 from "./assets/Img/gummy03.jpg";
 import img24 from "./assets/Img/gummy04.jpg";
 
+
 export const products = [
   {
     id: "1",
