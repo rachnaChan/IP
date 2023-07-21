@@ -11,7 +11,7 @@
         <form class=" m-auto mx-4 justify-content-between">
   
           <div class="d-flex justify-content-between">
-            <div class="w-50">
+            <div class="w-75 m-auto">
               <div>
                 <label class="text-muted textUser">Email</label>
                 <div class="form-outline">
@@ -31,16 +31,16 @@
   
             </div>
   
-            <div class="text-center w-25">
+            <!-- <div class="text-center w-25">
               <img class="mb-4" src="../assets/Img/Admin.jpg" alt="" width="72" height="57" />
-            </div>
+            </div> -->
           </div>
   
   
           <div class="checkbox mb-3"></div>
           <div class="text-center mx-5 mt-5">
             <RouterLink :to="{ name: 'home' }">
-          <button class="w-25 m-auto btn btn-lg btn-primary mx-4"> Login
+          <button class=" text-center w-75 m-auto btn btn-lg btn-primary mx-4"> Login
           </button>
         </RouterLink>
 
@@ -55,7 +55,7 @@
             </RouterLink>
           </a> -->
           <a href="">
-            <RouterLink to="/signup" class="text-right mt-3" style="margin-left: 23%;">
+            <RouterLink to="/signup" class="text-right mt-3" >
               Create your new account here.
             </RouterLink>
           </a>
