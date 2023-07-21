@@ -71,10 +71,9 @@
                         </div>
                         <hr class="mt-3">
 
-                        <div class="mt-3">
-                            <input type="number" placeholder="Quality" class="form-select form-select-lg mb-3"
-                                aria-label=".form-select-lg example">
-                        </div>
+                        <div class="mt-0" style="margin-left: 5%;">
+                        <input type="number" name="qty[]" v-model="product.quantity" class="form-select form-select-lg" aria-label=".form-select-lg example">
+                    </div>
 
                         <hr class="mt-3">
 
