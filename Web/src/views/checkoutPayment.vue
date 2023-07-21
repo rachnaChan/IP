@@ -1,6 +1,6 @@
 
 <template>
-    <div style="width: 100%;">
+    <div style="width: 100%;" class="mb-5">
 
         <div class=" rounded-bottom mt-5 fonts"
             style="margin-left: 10%; background-color: pink; width: 700px; height: 30px;">
@@ -197,7 +197,7 @@
             </div>
 
 
-            <div class="w-25 border border-dark">
+            <div class="w-25 border border-dark h-100  " >
 
                 <h5 class="mx-5 mt-3">Summary</h5>
 

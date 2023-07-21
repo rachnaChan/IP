@@ -1,6 +1,6 @@
 
 <template>
-    <div>
+    <div class="mb-5">
         <div class=" rounded-bottom mt-5 fonts"
             style="margin-left: 10%; background-color: pink; width: 400px; height: 30px;">
             <h5 class="fs-5 text-center mt-4">Your Cart</h5>
@@ -36,7 +36,7 @@
 
 
             </div>
-            <div class="w-25 border border-dark">
+            <div class="w-25 border border-dark mb-5">
                 <h5 class="mx-5 mt-3">Summary</h5>
                 <h5 class="mx-5">Subtotal</h5>
                 <h5 class="mx-5">Shopping</h5>
@@ -48,7 +48,7 @@
                 <hr>
                 <div class="d-flex justify-content-around">
                     <h5>Total</h5>
-                    <p class="price mx-5">{{ tprice + product.price * 0.25 }}</p>
+                    <h5 class="price mx-5">{{ tprice + product.price * 0.25 }}</h5>
                 </div>
 
                 <div class="d-flex justify-content-around m-auto mx-5 py-4">
