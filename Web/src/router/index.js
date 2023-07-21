@@ -11,6 +11,8 @@ import login from "../views/login.vue";
 import signup from "../views/signup.vue";
 import checkoutshipping from "../views/checkoutShipping.vue"
 import checkoutpayment from "../views/checkoutPayment.vue"
+import admin from "../views/Admin.vue"
+import { nextTick } from "vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -78,9 +80,34 @@ const router = createRouter({
     component: signup,
   },
 
+  {
+    path: '/admin',
+    name: 'admin',
+    component: admin,
+    meta: {requireAuth: true}
+  }
+
 ],
 
 });
 
 
+// router.beforeEach((to, from, next)=>{
+//   if(to.matched.some(record => record.meta.requiresAuth)){
+//     // this route requires auth, check if logged in
+//     console.log('auth required')
+//     if(!store.getters.getAdminState){
+//       next('/')
+//     }else{
+//       next()
+//     }
+//   }else{
+//     console.log(from)
+//     if(store.getters.getAdminState){
+//       next()
+//     }else{
+//       next('/admin')
+//     }
+//   }
+// })
 export default router;

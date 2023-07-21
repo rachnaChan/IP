@@ -5,7 +5,7 @@
             style="margin-left: 10%; background-color: pink; width: 400px; height: 30px;">
             <h5 class="fs-5 text-center mt-4">Home > Product's Info > Product title</h5>
         </div>
-        <div class="mx-5 m-auto d-flex justiy-content-around" v-for="product in cartItems" :key="product.id">
+        <div class="mx-5 m-auto d-flex justiy-content-around" v-for="product in cartItems" :key="product.id" >
             <div class=" mt-5 border border-dark w-50" style="margin-left: 10%; background-color: rgb(232, 226, 226);">
 
                 <div>
@@ -195,6 +195,10 @@ export default {
     }
 
 };
+
+
+
+
 </script>
   
 <style lang="scss" scoped>

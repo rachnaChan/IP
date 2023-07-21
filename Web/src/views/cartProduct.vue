@@ -21,9 +21,11 @@
                     </div>
 
                     <h5 class="mx-5 mt-2">{{ product.price }}</h5>
+
                     <div class="mt-0" style="margin-left: 5%;">
-                        <input type="number" class="form-select form-select-lg" aria-label=".form-select-lg example">
+                        <input type="number" name="qty[]" v-model="product.quantity" class="form-select form-select-lg" aria-label=".form-select-lg example">
                     </div>
+
                 </div>
 
                 <hr>
@@ -46,7 +48,7 @@
                 <hr>
                 <div class="d-flex justify-content-around">
                     <h5>Total</h5>
-                    <p class="price mx-5"> 33</p>
+                    <p class="price mx-5">{{ tprice + product.price * 0.25 }}</p>
                 </div>
 
                 <div class="d-flex justify-content-around m-auto mx-5 py-4">
@@ -59,7 +61,7 @@
                         </div>
                     </router-link>
 
-                    <div class="">
+                    <div class="" @click="removeCart(product)">
                         <button class="border border-dark btn btn-danger">
                             <h5 class="text-white">Cancel</h5>
                         </button>
@@ -84,19 +86,27 @@ export default {
     data() {
         return {
             cartItems,
-            
+
         }
     },
-    computed:{
-        tprice(){
+    methods:{
+        removeCart(product){
+            this.cartItems.splice(product,1);
+        }
+
+     } ,
+    computed: {
+        tprice() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity),
                 0,
             );
         }
     }
 
 };
+
+
 </script>
   
 <style lang="scss" scoped>

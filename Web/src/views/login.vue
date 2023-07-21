@@ -1,13 +1,14 @@
-<!-- 
+
 
 
 <template>
-    <div>
+    <div class="mt-5">
       <main class="form-signin">
   
         <div class="w-100 text-danger text-center" id="err" style="font-family: 'Dosis';"></div>
   
-        <form @submit="onSubmit" method="post" class=" m-auto mx-4 justify-content-between">
+        <!-- <form @submit="onSubmit" method="post" class=" m-auto mx-4 justify-content-between"> -->
+        <form class=" m-auto mx-4 justify-content-between">
   
           <div class="d-flex justify-content-between">
             <div class="w-50">
@@ -31,20 +32,30 @@
             </div>
   
             <div class="text-center w-25">
-              <img class="mb-4" src="../assets/logo.png" alt="" width="72" height="57" />
+              <img class="mb-4" src="../assets/Img/Admin.jpg" alt="" width="72" height="57" />
             </div>
           </div>
   
   
           <div class="checkbox mb-3"></div>
           <div class="text-center mx-5 mt-5">
-            <button class="w-25 m-auto btn btn-lg btn-success" type="submit">
+            <RouterLink :to="{ name: 'home' }">
+          <button class="w-25 m-auto btn btn-lg btn-primary mx-4"> Login
+          </button>
+        </RouterLink>
+
+            <!-- <button class="w-50 m-auto btn btn-lg btn-success" type="submit">
               Sign In
-            </button>
+            </button> -->
           </div>
   
-          <a href="http://localhost:3000/register">
+          <!-- <a href="http://localhost:3000/register">
             <RouterLink to="/register" class="text-right mt-3" style="margin-left: 23%;">
+              Create your new account here.
+            </RouterLink>
+          </a> -->
+          <a href="">
+            <RouterLink to="/signup" class="text-right mt-3" style="margin-left: 23%;">
               Create your new account here.
             </RouterLink>
           </a>
@@ -60,47 +71,47 @@
   
   <script>
   
-  import  home from "@/views/homeView.vue";
-  export default {
-    components: {
-      HomeView,
-    },
-    setup() {
-    },
-    data() {
-      return {
-        email: "",
-        password: "",
-      };
-    },
-    async mounted() {
-      // console.log("hello world");
-    },
-    methods: {
-      async onSubmit(e) {
-        e.preventDefault();
-        const res = await fetch("http://localhost:8000/user/login", {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify({
-            email: this.email,
-            password: this.password,
-          }),
-        });
+  // import  home from "@/views/homeView.vue";
+  // export default {
+  //   components: {
+  //     HomeView,
+  //   },
+  //   setup() {
+  //   },
+  //   data() {
+  //     return {
+  //       email: "",
+  //       password: "",
+  //     };
+  //   },
+  //   async mounted() {
+  //     // console.log("hello world");
+  //   },
+  //   methods: {
+  //     async onSubmit(e) {
+  //       e.preventDefault();
+  //       const res = await fetch("http://localhost:8000/user/login", {
+  //         method: "POST",
+  //         credentials: "include",
+  //         headers: {
+  //           "Content-type": "application/json",
+  //         },
+  //         body: JSON.stringify({
+  //           email: this.email,
+  //           password: this.password,
+  //         }),
+  //       });
   
-        const result = await res.json();
-        if (!result.success) {
-          alert(result.error);
-          return;
-        }
+  //       const result = await res.json();
+  //       if (!result.success) {
+  //         alert(result.error);
+  //         return;
+  //       }
   
-        this.$router.push({ name: "Home" });
-      },
-    },
-  };
+  //       this.$router.push({ name: "Home" });
+  //     },
+  //   },
+  // };
 //   import "@/assets/dist/css/bootstrap.min.css";
   
   
@@ -174,14 +185,5 @@
     }
   }
   </style>
-     -->
+    
 
-
-     <template>
-        <div>
-            
-        </div>
-     </template>
-
-     <script>
-    </script>

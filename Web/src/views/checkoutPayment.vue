@@ -244,7 +244,7 @@
   
 <script >
 
-import { cartItems } from '../data';
+import { cartItems, products } from '../data';
 
 export default {
     name: 'paymentmethod',
@@ -264,6 +264,11 @@ export default {
     }
 
 };
+
+
+
+
+       
 </script>
   
 <style lang="scss" scoped>
