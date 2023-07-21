@@ -203,12 +203,12 @@
 
                 <div class="d-flex">
                     <h5 class="mx-5">Subtotal</h5>
-                    <h5 class="mx-5">---</h5>
+                    <h5 class="mx-5">{{ product.quantity }} qty</h5>
                 </div>
 
                 <div class="d-flex">
                     <h5 class="mx-5">Shopping</h5>
-                    <h5 class="mx-5">---</h5>
+                    <h5 class="mx-5">{{ product.name }}</h5>
                 </div>
 
                 <div class="d-flex">
@@ -219,7 +219,7 @@
 
                 <hr>
 
-                <h6 class="m-auto mx-5 fw-5">Gift card or discount code <span class="price mx-4">33</span></h6>
+                <h6 class="m-auto mx-5 fw-5">Gift card or discount code <span class="price mx-4">{{ tprice + product.price*0.25 }}</span></h6>
 
                 <div>
                     <form action="" class="d-flex m-auto justify-content-around mt-3">
@@ -232,7 +232,10 @@
 
                 <div class="d-flex justify-content-around">
                     <h5>Total</h5>
-                    <p class="price mx-5"> 33</p>
+                    <p class="price mx-5" v-if="product.ground"> {{ mOne + product.price*0.25 }}</p>
+                    <p class="price mx-5" v-else-if="product.threedays"> {{ mTwo + product.price*0.25 }}</p>
+                    <p class="price mx-5" v-else-if="product.secondair"> {{ mThree + product.price*0.25 }}</p>
+                    <p class="price mx-5" v-else> {{ mFour + product.price*0.25 }}</p>
                 </div>
 
             </div>
@@ -257,10 +260,34 @@ export default {
     computed: {
         tprice() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity),
                 0,
             );
-        }
+        },
+        mOne(){
+            return this.cartItems.reduce(
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.ground),
+                0,
+            );
+        },
+        mTwo(){
+            return this.cartItems.reduce(
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.threedays),
+                0,
+            );
+        },
+        mThree(){
+            return this.cartItems.reduce(
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.secondair),
+                0,
+            );
+        },
+        mFour(){
+            return this.cartItems.reduce(
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.nextday),
+                0,
+            );
+        },
     }
 
 };
