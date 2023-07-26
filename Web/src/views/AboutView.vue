@@ -2,7 +2,8 @@
   <div>
 
     <div class="mt-5 m-auto w-75">
-      <h1 class=" text-info fonts text-center">Welcome to <span class="text-muted text-uppercase">Chloris's</span> Store!!</h1>
+      <h1 class=" text-info fonts text-center">Welcome to <span class="text-muted text-uppercase">Chloris's</span> Store!!
+      </h1>
     </div>
 
     <div class="m-auto rounded-bottom  mt-3 fonts" style="background-color: pink; width: 300px; height: 30px;">
@@ -138,7 +139,7 @@
       </div>
 
     </div>
-    
+
   </div>
 </template>
 

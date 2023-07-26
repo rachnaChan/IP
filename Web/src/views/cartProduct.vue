@@ -23,7 +23,8 @@
                     <h5 class="mx-5 mt-2">{{ product.price }}</h5>
 
                     <div class="mt-0" style="margin-left: 5%;">
-                        <input type="number" name="qty[]" v-model="product.quantity" class="form-select form-select-lg" aria-label=".form-select-lg example">
+                        <input type="number" name="qty[]" v-model="product.quantity" class="form-select form-select-lg"
+                            aria-label=".form-select-lg example">
                     </div>
 
                 </div>
@@ -89,12 +90,12 @@ export default {
 
         }
     },
-    methods:{
-        removeCart(product){
-            this.cartItems.splice(product,1);
+    methods: {
+        removeCart(product) {
+            this.cartItems.splice(product, 1);
         }
 
-     } ,
+    },
     computed: {
         tprice() {
             return this.cartItems.reduce(

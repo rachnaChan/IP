@@ -63,9 +63,9 @@
       <div class="text-center mx-5 mt-2">
         <RouterLink :to="{ name: '' }">
 
-        <button class="w-50 m-auto btn btn-lg btn-success" @click="created()" type="submit">
-          Sign Up
-        </button>
+          <button class="w-50 m-auto btn btn-lg btn-success" @click="created()" type="submit">
+            Sign Up
+          </button>
         </RouterLink>
 
         <RouterLink :to="{ name: 'login' }">

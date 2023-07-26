@@ -60,7 +60,7 @@
 
                     <RouterLink :to="{ name: 'home' }"> Home</RouterLink>
                     <RouterLink :to="{ name: 'about' }">About</RouterLink>
-                    <RouterLink :to="{ name: 'menu' }">Shop</RouterLink>
+                    <RouterLink :to="{ name: 'login' }">Shop</RouterLink>
                 </div>
 
                 <div class="d-flex mt-3 ">

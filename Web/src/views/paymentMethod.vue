@@ -144,7 +144,8 @@
 
                 <hr>
 
-                <h6 class="m-auto mx-5 fw-5">Gift card or discount code <span class="price mx-2">{{ tprice + product.price*0.25 }}</span></h6>
+                <h6 class="m-auto mx-5 fw-5">Gift card or discount code <span class="price mx-2">{{ tprice +
+                    product.price * 0.25 }}</span></h6>
 
                 <div>
                     <form action="" class="d-flex m-auto justify-content-around mt-3">
@@ -157,7 +158,7 @@
 
                 <div class="d-flex justify-content-around">
                     <h5>Total</h5>
-                    <p class="price mx-5"> {{ tprice + product.price*0.25 }}</p>
+                    <p class="price mx-5"> {{ tprice + product.price * 0.25 }}</p>
                 </div>
 
             </div>
@@ -165,7 +166,6 @@
         </div>
 
     </div>
-
 </template>
   
 <script >

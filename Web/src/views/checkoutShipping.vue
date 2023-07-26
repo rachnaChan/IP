@@ -105,7 +105,7 @@
 
 
 
-                        
+
 
                         <!-- <div class="form-check">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
@@ -164,7 +164,8 @@
 
                 <hr>
 
-                <h6 class="m-auto mx-5 fw-5">Gift card or discount code <span class="price mx-">{{ tprice + product.price*0.25 }}</span></h6>
+                <h6 class="m-auto mx-5 fw-5">Gift card or discount code <span class="price mx-">{{ tprice +
+                    product.price * 0.25 }}</span></h6>
 
                 <div>
                     <form action="" class="d-flex m-auto justify-content-around mt-3">
@@ -177,10 +178,10 @@
 
                 <div class="d-flex justify-content-around">
                     <h5>Total</h5>
-                    <p class="price mx-5" v-if="product.ground"> {{ mOne + product.price*0.25 }}</p>
-                    <p class="price mx-5" v-else-if="product.threedays"> {{ mTwo + product.price*0.25 }}</p>
-                    <p class="price mx-5" v-else-if="product.secondair"> {{ mThree + product.price*0.25 }}</p>
-                    <p class="price mx-5" v-else> {{ mFour + product.price*0.25 }}</p>
+                    <p class="price mx-5" v-if="product.ground"> {{ mOne + product.price * 0.25 }}</p>
+                    <p class="price mx-5" v-else-if="product.threedays"> {{ mTwo + product.price * 0.25 }}</p>
+                    <p class="price mx-5" v-else-if="product.secondair"> {{ mThree + product.price * 0.25 }}</p>
+                    <p class="price mx-5" v-else> {{ mFour + product.price * 0.25 }}</p>
                 </div>
 
             </div>
@@ -209,39 +210,39 @@ export default {
                 0,
             );
         },
-        mOne(){
+        mOne() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.ground),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.ground),
                 0,
             );
         },
-        mTwo(){
+        mTwo() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.threedays),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.threedays),
                 0,
             );
         },
-        mThree(){
+        mThree() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.secondair),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.secondair),
                 0,
             );
         },
-        mFour(){
+        mFour() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.nextday),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.nextday),
                 0,
             );
         },
     },
-    methods:{
-        
+    methods: {
+
     },
 
 };
 
 
-          
+
 
 </script>
   

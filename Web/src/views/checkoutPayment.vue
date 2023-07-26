@@ -133,7 +133,8 @@
                                         <input class="form-check-input" type="radio" name="inlineRadioOptions"
                                             id="inlineRadio1" value="option1">
 
-                                        <label class="form-check-label" for="inlineRadio1">Use a different billing address</label>
+                                        <label class="form-check-label" for="inlineRadio1">Use a different billing
+                                            address</label>
                                     </div>
 
 
@@ -157,7 +158,8 @@
                                         <input class="form-check-input" type="checkbox" name="inlineRadioOptions"
                                             id="inlineCheckbox1" value="option1">
 
-                                        <label class="form-check-label" for="inlineCheckbox1">Save my information for faster checkout</label>
+                                        <label class="form-check-label" for="inlineCheckbox1">Save my information for faster
+                                            checkout</label>
                                     </div>
 
 
@@ -189,15 +191,10 @@
                     </router-link>
 
                 </div>
-
-
-
-
-
             </div>
 
 
-            <div class="w-25 border border-dark h-100  " >
+            <div class="w-25 border border-dark h-100 mb-5 ">
 
                 <h5 class="mx-5 mt-3">Summary</h5>
 
@@ -219,7 +216,8 @@
 
                 <hr>
 
-                <h6 class="m-auto mx-5 fw-5">Gift card or discount code <span class="price mx-4">{{ tprice + product.price*0.25 }}</span></h6>
+                <h6 class="m-auto mx-5 fw-5">Gift card or discount code <span class="price mx-4">{{ tprice +
+                    product.price * 0.25 }}</span></h6>
 
                 <div>
                     <form action="" class="d-flex m-auto justify-content-around mt-3">
@@ -232,10 +230,10 @@
 
                 <div class="d-flex justify-content-around">
                     <h5>Total</h5>
-                    <p class="price mx-5" v-if="product.ground"> {{ mOne + product.price*0.25 }}</p>
-                    <p class="price mx-5" v-else-if="product.threedays"> {{ mTwo + product.price*0.25 }}</p>
-                    <p class="price mx-5" v-else-if="product.secondair"> {{ mThree + product.price*0.25 }}</p>
-                    <p class="price mx-5" v-else> {{ mFour + product.price*0.25 }}</p>
+                    <p class="price mx-5" v-if="product.ground"> {{ mOne + product.price * 0.25 }}</p>
+                    <p class="price mx-5" v-else-if="product.threedays"> {{ mTwo + product.price * 0.25 }}</p>
+                    <p class="price mx-5" v-else-if="product.secondair"> {{ mThree + product.price * 0.25 }}</p>
+                    <p class="price mx-5" v-else> {{ mFour + product.price * 0.25 }}</p>
                 </div>
 
             </div>
@@ -264,27 +262,27 @@ export default {
                 0,
             );
         },
-        mOne(){
+        mOne() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.ground),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.ground),
                 0,
             );
         },
-        mTwo(){
+        mTwo() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.threedays),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.threedays),
                 0,
             );
         },
-        mThree(){
+        mThree() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.secondair),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.secondair),
                 0,
             );
         },
-        mFour(){
+        mFour() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) +(item.nextday),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.nextday),
                 0,
             );
         },
@@ -295,7 +293,7 @@ export default {
 
 
 
-       
+
 </script>
   
 <style lang="scss" scoped>
