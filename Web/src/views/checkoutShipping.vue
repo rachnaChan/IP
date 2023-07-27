@@ -44,13 +44,15 @@
                         </label>
                     </div>
 
-                    <div>
+                    <div >
 
                         <div class="d-flex m-auto justify-content-between">
 
                             <div class="form-check">
+                                <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1"   v-model="product.ground"> -->
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1">
+                                    value="2.4" v-model="product.ground" @click="a = !a">
 
                                 <label class="form-check-label" for="inlineRadio1">UPS Ground</label>
                             </div>
@@ -63,8 +65,10 @@
                         <div class="d-flex m-auto justify-content-between">
 
                             <div class="form-check">
+                                <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1"   v-model="product.threedays"> -->
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1">
+                                    value="4.4" v-model="product.threedays"  @click="b = !b">
 
                                 <label class="form-check-label" for="inlineRadio1">UPS 3 Days Select</label>
                             </div>
@@ -77,8 +81,10 @@
                         <div class="d-flex m-auto justify-content-between">
 
                             <div class="form-check">
+                                <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1"   v-model="product.secondair"> -->
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1">
+                                    value="8.4"  v-model="product.secondair" @click="c = !c">
 
                                 <label class="form-check-label" for="inlineRadio1">UPS 2nd Day Air</label>
                             </div>
@@ -91,8 +97,10 @@
                         <div class="d-flex m-auto justify-content-between">
 
                             <div class="form-check">
+                                <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1"   v-model="product.nextday"> -->
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="option1">
+                                    value="12.4" v-model="product.nextday" @click="d = !d">
 
                                 <label class="form-check-label" for="inlineRadio1">UPS Next Day After</label>
                             </div>
@@ -102,10 +110,6 @@
 
                             </div>
                         </div>
-
-
-
-
 
                         <!-- <div class="form-check">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
@@ -176,12 +180,14 @@
 
                 <hr>
 
-                <div class="d-flex justify-content-around">
+                <div class="d-flex justify-content-around py-4">
                     <h5>Total</h5>
-                    <p class="price mx-5" v-if="product.ground"> {{ mOne + product.price * 0.25 }}</p>
-                    <p class="price mx-5" v-else-if="product.threedays"> {{ mTwo + product.price * 0.25 }}</p>
-                    <p class="price mx-5" v-else-if="product.secondair"> {{ mThree + product.price * 0.25 }}</p>
-                    <p class="price mx-5" v-else> {{ mFour + product.price * 0.25 }}</p>
+                    <h5 class="price mx-5" v-if="a">{{ mOne + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else-if="b">{{ mTwo + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else-if="c">{{ mThree + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else-if="d">{{ mFour + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else>{{ tprice + product.price * 0.25 }}</h5>
+                    
                 </div>
 
             </div>
@@ -191,9 +197,14 @@
     </div>
 </template>
   
-<script >
+<script  >
 
 import { cartItems } from '../data';
+import {ref} from 'vue';
+const a=ref(true);
+const b=ref(true);
+const c=ref(true);
+const d=ref(true);
 
 export default {
     name: 'paymentmethod',
@@ -204,33 +215,33 @@ export default {
         }
     },
     computed: {
-        tprice() {
-            return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity),
-                0,
-            );
-        },
         mOne() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.ground),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + 2.4,
                 0,
             );
         },
         mTwo() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.threedays),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + 4.4,
                 0,
             );
         },
         mThree() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.secondair),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) + 8.4,
                 0,
             );
         },
         mFour() {
             return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) + (item.nextday),
+                (sum, item) => sum + Number(item.price) * Number(item.quantity) +12.4,
+                0,
+            );
+        },
+        tprice() {
+            return this.cartItems.reduce(
+                (sum, item) => sum + Number(item.price) * Number(item.quantity),
                 0,
             );
         },

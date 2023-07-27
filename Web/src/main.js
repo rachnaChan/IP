@@ -12,3 +12,4 @@ const app = createApp(App)
 app.use(router)
 
 app.mount('#app')
+//Compare between peer-to-peer and client-server architecture. Give Example.?

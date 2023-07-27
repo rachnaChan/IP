@@ -39,7 +39,7 @@
   
           <div class="checkbox mb-3"></div>
           <div class="text-center mx-5 mt-5">
-            <RouterLink :to="{ name: 'home' }">
+            <RouterLink :to="{ name: 'menu' }">
           <button class=" text-center w-75 m-auto btn btn-lg btn-primary mx-4"> Login
           </button>
         </RouterLink>

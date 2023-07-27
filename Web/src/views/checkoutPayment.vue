@@ -230,10 +230,11 @@
 
                 <div class="d-flex justify-content-around">
                     <h5>Total</h5>
-                    <p class="price mx-5" v-if="product.ground"> {{ mOne + product.price * 0.25 }}</p>
-                    <p class="price mx-5" v-else-if="product.threedays"> {{ mTwo + product.price * 0.25 }}</p>
-                    <p class="price mx-5" v-else-if="product.secondair"> {{ mThree + product.price * 0.25 }}</p>
-                    <p class="price mx-5" v-else> {{ mFour + product.price * 0.25 }}</p>
+                    <h5 class="price mx-5" v-if="product.ground">{{ mOne + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else-if="product.threedays">{{ mTwo + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else-if="product.secondair">{{ mThree + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else-if="product.nextday">{{ mFour + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else>{{ tprice + product.price * 0.25 }}</h5>
                 </div>
 
             </div>

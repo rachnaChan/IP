@@ -21,7 +21,7 @@
                         wewfcsadcfewqewdedsfafe</p>
 
                     <div style="margin-left: 70%;">
-                        <RouterLink :to="{ name: 'menu' }">
+                        <RouterLink :to="{ name: 'login' }">
                             <button class="cta">
                                 <span class="hover-underline-animation text-danger fw-bold"> Shop now </span>
                                 <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg"

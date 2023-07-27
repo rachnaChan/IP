@@ -156,9 +156,9 @@
 
                 <hr>
 
-                <div class="d-flex justify-content-around">
+                <div class="d-flex justify-content-around py-4">
                     <h5>Total</h5>
-                    <p class="price mx-5"> {{ tprice + product.price * 0.25 }}</p>
+                    <h5 class="price mx-5 "> {{ tprice + product.price * 0.25 }}</h5>
                 </div>
 
             </div>
