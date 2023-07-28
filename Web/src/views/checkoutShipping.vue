@@ -52,7 +52,7 @@
                                 <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                                     value="option1"   v-model="product.ground"> -->
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="2.4" v-model="product.ground" @click="a = !a">
+                                    value="2.4" v-model="product.ground" @change="shippingOnChange(2.4)">
 
                                 <label class="form-check-label" for="inlineRadio1">UPS Ground</label>
                             </div>
@@ -68,7 +68,7 @@
                                 <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                                     value="option1"   v-model="product.threedays"> -->
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="4.4" v-model="product.threedays"  @click="b = !b">
+                                    value="4.4" v-model="product.threedays"  @change="shippingOnChange(4.4)">
 
                                 <label class="form-check-label" for="inlineRadio1">UPS 3 Days Select</label>
                             </div>
@@ -84,7 +84,7 @@
                                 <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                                     value="option1"   v-model="product.secondair"> -->
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="8.4"  v-model="product.secondair" @click="c = !c">
+                                    value="8.4"  v-model="product.secondair" @change="shippingOnChange(8.4)">
 
                                 <label class="form-check-label" for="inlineRadio1">UPS 2nd Day Air</label>
                             </div>
@@ -100,7 +100,7 @@
                                 <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                                     value="option1"   v-model="product.nextday"> -->
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="12.4" v-model="product.nextday" @click="d = !d">
+                                    value="12.4" v-model="product.nextday" @change="shippingOnChange(12.4)">
 
                                 <label class="form-check-label" for="inlineRadio1">UPS Next Day After</label>
                             </div>
@@ -116,7 +116,7 @@
                                 <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
                                     value="option1"   v-model="product.nextday"> -->
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                    value="12.4" v-model="product.nextday" @click="d = !d">
+                                    value="12.4" v-model="product.nextday" @change="shippingOnChange(0)">
 
                                 <label class="form-check-label" for="inlineRadio1">----</label>
                             </div>
@@ -138,7 +138,7 @@
                 <div class="return d-flex justify-content-between m-auto">
 
                     <RouterLink :to="{ name: 'viewcartproduct' }">
-                        <h5 class=" mt-3 text-decoration-none"> > Return to Cart</h5>
+                        <h5 class=" mt-3 text-decoration-none">  Return to Cart</h5>
                     </RouterLink>
 
                     <router-link v-bind:to="'/checkoutpayment'">
@@ -194,11 +194,7 @@
 
                 <div class="d-flex justify-content-around py-4">
                     <h5>Total</h5>
-                    <h5 class="price mx-5" v-if="d">{{ mFour + product.price * 0.25 }} </h5>
-                    <h5 class="price mx-5" v-else-if="c">{{ mThree + product.price * 0.25 }} </h5>
-                    <h5 class="price mx-5" v-else-if="b">{{ mTwo + product.price * 0.25 }} </h5>
-                    <h5 class="price mx-5" v-else-if="a">{{ mOne + product.price * 0.25 }} </h5>
-                    <h5 class="price mx-5" v-else-if="!d">{{ tprice + product.price * 0.25 }}</h5>
+                    <h5 class="price mx-5">{{shippingFee+ + tprice + product.price * 0.25 }} </h5>
                     
                 </div>
 
@@ -217,49 +213,28 @@ const a=ref(true);
 const b=ref(true);
 const c=ref(true);
 const d=ref(true);
-
 export default {
     name: 'paymentmethod',
     data() {
         return {
             cartItems,
-
+            shippingFee:0
         }
     },
     computed: {
-        mOne() {
-            return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) + 2.4,
-                0,
-            );
-        },
-        mTwo() {
-            return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) + 4.4,
-                0,
-            );
-        },
-        mThree() {
-            return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) + 8.4,
-                0,
-            );
-        },
-        mFour() {
-            return this.cartItems.reduce(
-                (sum, item) => sum + Number(item.price) * Number(item.quantity) +12.4,
-                0,
-            );
-        },
         tprice() {
             return this.cartItems.reduce(
                 (sum, item) => sum + Number(item.price) * Number(item.quantity),
                 0,
             );
         },
+       
     },
     methods: {
-
+        shippingOnChange(ShippingFeeValue){
+            this.shippingFee=ShippingFeeValue
+            // alert(this.shippingFee)
+        }
     },
 
 };
