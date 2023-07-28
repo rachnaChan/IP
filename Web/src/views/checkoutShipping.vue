@@ -110,6 +110,18 @@
 
                             </div>
                         </div>
+                        <div class="d-flex m-auto justify-content-between">
+
+                            <div class="form-check">
+                                <!-- <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1"   v-model="product.nextday"> -->
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="12.4" v-model="product.nextday" @click="d = !d">
+
+                                <label class="form-check-label" for="inlineRadio1">----</label>
+                            </div>
+
+                        </div>
 
                         <!-- <div class="form-check">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
@@ -182,11 +194,11 @@
 
                 <div class="d-flex justify-content-around py-4">
                     <h5>Total</h5>
-                    <h5 class="price mx-5" v-if="a">{{ mOne + product.price * 0.25 }} </h5>
-                    <h5 class="price mx-5" v-else-if="b">{{ mTwo + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-if="d">{{ mFour + product.price * 0.25 }} </h5>
                     <h5 class="price mx-5" v-else-if="c">{{ mThree + product.price * 0.25 }} </h5>
-                    <h5 class="price mx-5" v-else-if="d">{{ mFour + product.price * 0.25 }} </h5>
-                    <h5 class="price mx-5" v-else>{{ tprice + product.price * 0.25 }}</h5>
+                    <h5 class="price mx-5" v-else-if="b">{{ mTwo + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else-if="a">{{ mOne + product.price * 0.25 }} </h5>
+                    <h5 class="price mx-5" v-else-if="!d">{{ tprice + product.price * 0.25 }}</h5>
                     
                 </div>
 
