@@ -1,0 +1,36 @@
+{
+  "name": "vuejs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.5.0",
+    "bootstrap": "^5.3.2",
+    "dotenv": "^16.3.1",
+    "flowbite": "^1.8.1",
+    "html-to-pdfmake": "^2.4.25",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "pdfmake": "^0.2.7",
+    "tw-elements": "^1.0.0-beta3",
+    "vue": "^3.3.4",
+    "vue-cookies": "^1.8.3",
+    "vue-pdf": "^4.3.0",
+    "vue-router": "^4.2.4",
+    "vuex": "^4.1.0",
+    "vuex-plugin-persistedstate": "^1.0.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "autoprefixer": "^10.4.15",
+    "html2pdf.js": "^0.10.1",
+    "postcss": "^8.4.28",
+    "sass": "^1.66.1",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.6"
+  }
+}
